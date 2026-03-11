@@ -1,2 +1,2 @@
 # venetel_website
-Pagina web de veneteñ
+Pagina web de VENETEL
