@@ -16,22 +16,16 @@ const features = [
 
 const plans = [
   {
-    name: "Starter", price: "$19", period: "/mes", badge: null,
-    subtitle: "1 propiedad · Hasta 10 habitaciones",
-    items: ["Dashboard y métricas", "Gestión de reservas", "Control de inventario", "Soporte por email"],
+    name: "Estándar", price: "$25", period: "/mes", badge: null,
+    subtitle: "1 propiedad · Hasta 20 habitaciones",
+    items: ["Todos los módulos incluidos", "Historial de reportes 3 meses", "1 propiedad", "Hasta 20 habitaciones", "Soporte por email en 48h"],
     cta: "Comenzar gratis", ctaLink: "https://app.venetel.com",
   },
   {
-    name: "Pro", price: "$39", period: "/mes", badge: "Más popular",
-    subtitle: "1 propiedad · Hasta 30 habitaciones",
-    items: ["Todo lo de Starter", "Pagos y finanzas avanzado", "Reportes detallados", "Gestión de extras y servicios", "Soporte prioritario"],
+    name: "Pro", price: "$60", period: "/mes", badge: "Recomendado",
+    subtitle: "Propiedades y habitaciones ilimitadas",
+    items: ["Todo lo de Estándar", "Propiedades ilimitadas", "Habitaciones ilimitadas", "Historial de reportes ilimitado", "Exportación de datos en CSV", "Programa de referidos con descuentos", "Soporte prioritario en 24h"],
     cta: "Comenzar gratis", ctaLink: "https://app.venetel.com",
-  },
-  {
-    name: "Multi", price: "$35", period: "/propiedad/mes", badge: null,
-    subtitle: "Propiedades ilimitadas · Habitaciones ilimitadas",
-    items: ["Todo lo de Pro en cada propiedad", "Panel unificado multi-propiedad", "Gestión centralizada de equipos", "Soporte dedicado"],
-    cta: "Hablar con ventas", ctaLink: "#contacto",
   },
 ];
 
@@ -43,10 +37,16 @@ const metrics = [
 ];
 
 const Index = () => {
+  const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({ nombre: "", email: "", mensaje: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent("Solicitud de demo — VENETEL");
+    const body = encodeURIComponent(`Nombre: ${formData.nombre}\nEmail: ${formData.email}\n\n${formData.mensaje}`);
+    window.location.href = `mailto:venetelsaas@gmail.com?subject=${subject}&body=${body}`;
+    setShowModal(false);
+    setFormData({ nombre: "", email: "", mensaje: "" });
   };
 
   return (
@@ -287,12 +287,47 @@ const Index = () => {
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto">
               <span className="text-accent text-sm font-bold uppercase tracking-widest">Precios</span>
-              <h2 className="mt-3 text-3xl md:text-4xl font-bold text-foreground">Planes simples. Sin sorpresas.</h2>
-              <p className="mt-3 text-muted-foreground text-lg">14 días de prueba gratuita en todos los planes. Sin tarjeta de crédito.</p>
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold text-foreground">Un plan para cada etapa de tu hotel</h2>
+              <p className="mt-3 text-muted-foreground text-lg">Sin costos ocultos ni comisiones sobre tus reservas</p>
             </div>
           </ScrollReveal>
-          <div className="mt-14 grid md:grid-cols-3 gap-6 lg:gap-8">
-            {plans.map((plan, i) => (
+          <div className="mt-14 grid md:grid-cols-2 gap-6 lg:gap-8 max-w-3xl mx-auto">
+            {[
+              {
+                name: "Estándar",
+                price: "$25",
+                period: "/mes",
+                badge: null,
+                subtitle: "1 propiedad · Hasta 5 habitaciones",
+                items: [
+                  "Todos los módulos incluidos",
+                  "Historial de reportes 3 meses",
+                  "1 propiedad",
+                  "Hasta 5 habitaciones",
+                  "Soporte por email en 48h",
+                ],
+                cta: "Empezar Ahora!",
+                ctaLink: "https://app.venetel.com",
+              },
+              {
+                name: "Pro",
+                price: "$60",
+                period: "/mes",
+                badge: "Recomendado",
+                subtitle: "Propiedades y habitaciones ilimitadas",
+                items: [
+                  "Todo lo de Estándar",
+                  "Propiedades ilimitadas",
+                  "Habitaciones ilimitadas",
+                  "Historial de reportes ilimitado",
+                  "Exportación de datos en CSV",
+                  "Programa de referidos con descuentos",
+                  "Soporte prioritario en 24h",
+                ],
+                cta: "Empezar Ahora!",
+                ctaLink: "https://app.venetel.com",
+              },
+            ].map((plan, i) => (
               <ScrollReveal key={plan.name} delay={i * 0.1}>
                 <div className={`rounded-2xl p-8 flex flex-col h-full relative transition-all duration-300 ${
                   plan.badge
@@ -300,7 +335,7 @@ const Index = () => {
                     : "bg-background border hover:shadow-lg"
                 }`}>
                   {plan.badge && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground text-xs font-bold px-4 py-1 rounded-full shadow-md">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 rounded-full shadow-md">
                       {plan.badge}
                     </span>
                   )}
@@ -339,54 +374,86 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ═══════════════════ CONTACTO ═══════════════════ */}
-      <section id="contacto" className="bg-surface py-24">
-        <div className="container mx-auto px-4 lg:px-8 max-w-xl">
+      {/* ═══════════════════ CTA FINAL ═══════════════════ */}
+      <section className="bg-background py-24 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
           <ScrollReveal>
-            <div className="text-center">
-              <span className="text-accent text-sm font-bold uppercase tracking-widest">Contacto</span>
-              <h2 className="mt-3 text-3xl md:text-4xl font-bold text-foreground">¿Tienes alguna pregunta?</h2>
-              <p className="mt-3 text-muted-foreground">Escríbenos y te respondemos a la brevedad.</p>
+            <div className="max-w-2xl mx-auto">
+              <span className="text-accent text-sm font-bold uppercase tracking-widest">Empieza hoy</span>
+              <h2 className="mt-3 text-4xl md:text-5xl font-extrabold text-foreground leading-tight">
+                Tu hotel, bajo control<br /><span className="text-accent">desde hoy.</span>
+              </h2>
+              <p className="mt-5 text-muted-foreground text-lg leading-relaxed">
+                14 días para descubrir si VENETEL es para ti. Sin tarjeta de crédito, sin compromiso.
+              </p>
             </div>
           </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <form onSubmit={handleSubmit} className="mt-10 space-y-4">
-              <input type="text" placeholder="Nombre" required value={formData.nombre} onChange={(e) => setFormData({ ...formData, nombre: e.target.value })} className="w-full rounded-xl border bg-background px-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all" />
-              <input type="email" placeholder="Email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full rounded-xl border bg-background px-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all" />
-              <textarea placeholder="Mensaje" rows={4} required value={formData.mensaje} onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })} className="w-full rounded-xl border bg-background px-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all resize-none" />
-              <button type="submit" className="w-full rounded-xl bg-accent px-4 py-3.5 text-sm font-bold text-accent-foreground hover:brightness-110 transition shadow-md shadow-accent/20">
-                Enviar mensaje
-              </button>
-            </form>
-            <div className="mt-6 flex items-center justify-center gap-2 text-muted-foreground text-sm">
-              <Instagram size={18} />
-              <a href="#" className="hover:text-accent transition-colors">Síguenos en Instagram</a>
-            </div>
-          </ScrollReveal>
+
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://app.venetel.com"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-4 text-base font-bold text-accent-foreground hover:brightness-110 transition shadow-lg shadow-accent/20">
+              Empezar ahora
+              <ArrowRight size={16} />
+            </a>
+            <button
+              onClick={() => setShowModal(true)}
+              className="inline-flex items-center justify-center rounded-lg border-2 border-primary px-8 py-4 text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition">
+              Solicitar un demo
+            </button>
+          </div>
+
+          <div className="mt-10 flex flex-wrap justify-center gap-6">
+            {[
+              { icon: Shield, text: "Datos privados y seguros" },
+              { icon: Zap, text: "Sin instalación" },
+              { icon: Globe, text: "Soporte en español" },
+            ].map((item) => (
+              <div key={item.text} className="flex items-center gap-2 text-muted-foreground text-xs font-medium">
+                <item.icon size={14} className="text-accent/70" />
+                {item.text}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ═══════════════════ CTA FINAL ═══════════════════ */}
-      <section className="gradient-cta-dark py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
-        <div className="container mx-auto px-4 lg:px-8 text-center relative z-10">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground">Tu hotel, bajo control desde hoy.</h2>
-            <p className="mt-4 text-primary-foreground/70 text-lg max-w-xl mx-auto">
-              Comienza tu prueba gratuita de 14 días — sin tarjeta de crédito, sin compromisos.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <a href="https://app.venetel.com" className="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-3.5 text-base font-bold text-accent-foreground hover:brightness-110 transition shadow-lg shadow-accent/20">
-                Comenzar gratis
-              </a>
-              <a href="#" className="inline-flex items-center justify-center rounded-lg border-2 border-primary-foreground/30 px-8 py-3.5 text-base font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition">
-                Ver demo
-              </a>
-            </div>
-          </ScrollReveal>
+      {/* ═══════════════════ MODAL DEMO ═══════════════════ */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{ background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}
+          onClick={() => setShowModal(false)}>
+          <div className="bg-background rounded-2xl p-8 w-full max-w-md shadow-2xl relative"
+            onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition">
+              <XCircle size={20} />
+            </button>
+            <span className="text-accent text-xs font-bold uppercase tracking-widest">Solicitar demo</span>
+            <h3 className="mt-2 text-2xl font-extrabold text-foreground">Hablemos de tu hotel</h3>
+            <p className="mt-1 text-sm text-muted-foreground">Te contactamos para mostrarte VENETEL en acción.</p>
+            <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+              <div className="grid grid-cols-2 gap-3">
+                <input type="text" placeholder="Nombre" required value={formData.nombre}
+                  onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
+                  className="w-full rounded-xl border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all" />
+                <input type="email" placeholder="Email" required value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full rounded-xl border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all" />
+              </div>
+              <textarea placeholder="Cuéntanos sobre tu hotel (nombre, número de habitaciones, ciudad...)" rows={4} required
+                value={formData.mensaje}
+                onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
+                className="w-full rounded-xl border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all resize-none" />
+              <button type="submit"
+                className="w-full rounded-xl bg-accent px-4 py-3.5 text-sm font-bold text-accent-foreground hover:brightness-110 transition shadow-md shadow-accent/20">
+                Enviar solicitud
+              </button>
+            </form>
+          </div>
         </div>
-      </section>
+      )}
     </>
   );
 };
