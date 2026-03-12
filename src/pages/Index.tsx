@@ -155,38 +155,38 @@ const Index = () => {
             {/* Feature list derecha */}
             <div className="lg:col-span-8">
               <div className="relative">
-                <div className="absolute left-6 top-0 bottom-0 w-px" style={{ background: 'linear-gradient(to bottom, hsl(var(--accent) / 0.6), hsl(var(--accent) / 0.1))' }} />
+                <div className="absolute left-6 top-0 bottom-0 w-px" style={{ background: 'linear-gradient(to bottom, hsl(var(--primary) / 0.6), hsl(var(--primary) / 0.1))' }} />
                 <div className="space-y-0">
                   {[
                     {
                       icon: CreditCard,
                       title: "Sin comisiones",
                       description: "Pagas tu suscripción mensual y nada más. No te cobramos porcentaje sobre tus reservas como hacen muchas plataformas internacionales.",
-                      color: "hsl(var(--accent))",
+                      color: "hsl(var(--primary))",
                     },
                     {
                       icon: BarChart2,
                       title: "Métricas y reportes en tiempo real",
                       description: "Ocupación, ingresos y pagos pendientes siempre actualizados. Información clara para tomar decisiones, no para interpretarlas.",
-                      color: "hsl(var(--accent))",
+                      color: "hsl(var(--primary))",
                     },
                     {
                       icon: LayoutDashboard,
                       title: "Todo en una sola plataforma",
                       description: "Reservas, finanzas, inventario y huéspedes en un solo lugar. Sin integraciones adicionales ni herramientas de terceros.",
-                      color: "hsl(var(--accent))",
+                      color: "hsl(var(--primary))",
                     },
                     {
                       icon: TrendingUp,
                       title: "Crece contigo",
                       description: "Escuchamos a nuestros clientes y construimos en función de sus necesidades reales. El producto mejora con cada conversación.",
-                      color: "hsl(var(--accent))",
+                      color: "hsl(var(--primary))",
                     },
                     {
                       icon: Globe,
                       title: "Hecho con talento venezolano",
                       description: "Desarrollado localmente, con soporte en español y un equipo que entiende el mercado desde adentro.",
-                      color: "hsl(var(--accent))",
+                      color: "hsl(var(--primary))",
                     },
                   ].map((item, i) => (
                     <ScrollReveal key={item.title} delay={i * 0.08}>
@@ -210,9 +210,43 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ═══════════════════ SOBRE NOSOTROS ═══════════════════ */}
+      <section className="relative py-24 overflow-hidden bg-surface">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+        <div className="container mx-auto px-4 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <span className="text-accent text-sm font-bold uppercase tracking-widest">Nuestra historia</span>
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold text-foreground">¿Quiénes somos?</h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              { label: "Misión", icon: Target, text: "En VENETEL creemos que cada hotelero merece operar con herramientas profesionales sin pagar precios inalcanzables. Democratizar la gestión hotelera es nuestra razón de ser." },
+              { label: "Visión", icon: Eye, text: "Convertirnos en la plataforma de gestión hotelera de referencia en Venezuela y llevar ese estándar a toda Latinoamérica, un hotel a la vez." },
+            ].map((item, i) => (
+              <ScrollReveal key={item.label} delay={i * 0.15}>
+                <div className="relative bg-background rounded-2xl p-10 h-full overflow-hidden border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+                  <div className="w-12 h-1 rounded-full mb-8" style={{ background: 'hsl(var(--primary))' }} />
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ background: 'hsl(var(--primary) / 0.1)' }}>
+                      <item.icon size={20} className="text-primary" />
+                    </div>
+                    <h3 className="text-lg font-bold text-primary">{item.label}</h3>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">{item.text}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════════════ FUNCIONALIDADES ═══════════════════ */}
       <section className="bg-surface py-24 relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
         <div className="container mx-auto px-4 lg:px-8">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto">
@@ -224,10 +258,10 @@ const Index = () => {
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f, i) => (
               <ScrollReveal key={f.title} delay={i * 0.08}>
-                <div className="group rounded-2xl bg-background border p-7 hover:shadow-xl hover:shadow-accent/5 hover:border-accent/30 transition-all duration-500 h-full">
+                <div className="group rounded-2xl bg-background border p-7 hover:shadow-xl hover:shadow-primary/5 hover:border-primary/30 transition-all duration-500 h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
-                      <f.icon size={20} className="text-accent" />
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                      <f.icon size={20} className="text-primary" />
                     </div>
                     <h3 className="font-bold text-foreground text-lg">{f.title}</h3>
                   </div>
@@ -247,7 +281,8 @@ const Index = () => {
       </section>
 
       {/* ═══════════════════ PRICING ═══════════════════ */}
-      <section className="bg-background py-24">
+      <section className="bg-surface py-24 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
         <div className="container mx-auto px-4 lg:px-8">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto">
@@ -261,7 +296,7 @@ const Index = () => {
               <ScrollReveal key={plan.name} delay={i * 0.1}>
                 <div className={`rounded-2xl p-8 flex flex-col h-full relative transition-all duration-300 ${
                   plan.badge
-                    ? "bg-background border-2 border-accent shadow-xl shadow-accent/10 scale-[1.02]"
+                    ? "bg-background border-2 border-primary shadow-xl shadow-primary/10 scale-[1.02]"
                     : "bg-background border hover:shadow-lg"
                 }`}>
                   {plan.badge && (
@@ -301,40 +336,6 @@ const Index = () => {
               </Link>
             </div>
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ═══════════════════ SOBRE NOSOTROS ═══════════════════ */}
-      <section className="relative py-24 overflow-hidden bg-surface">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
-        <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <span className="text-accent text-sm font-bold uppercase tracking-widest">Nuestra historia</span>
-              <h2 className="mt-3 text-3xl md:text-4xl font-bold text-foreground">¿Quiénes somos?</h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {[
-              { label: "Misión", icon: Target, text: "En VENETEL creemos que cada hotelero merece operar con herramientas profesionales sin pagar precios inalcanzables. Democratizar la gestión hotelera es nuestra razón de ser." },
-              { label: "Visión", icon: Eye, text: "Convertirnos en la plataforma de gestión hotelera de referencia en Venezuela y llevar ese estándar a toda Latinoamérica, un hotel a la vez." },
-            ].map((item, i) => (
-              <ScrollReveal key={item.label} delay={i * 0.15}>
-                <div className="relative bg-background rounded-2xl p-10 h-full overflow-hidden border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-300">
-                  <div className="w-12 h-1 rounded-full mb-8" style={{ background: 'hsl(var(--accent))' }} />
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: 'hsl(var(--accent) / 0.1)' }}>
-                      <item.icon size={20} className="text-accent" />
-                    </div>
-                    <h3 className="text-lg font-bold text-accent">{item.label}</h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">{item.text}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
         </div>
       </section>
 
