@@ -74,7 +74,7 @@ const Navbar = () => {
             href="https://app.venetel.com"
             className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground hover:brightness-110 transition"
           >
-            Comenzar gratis
+            Empezar Ahora
           </a>
         </div>
 
@@ -100,7 +100,7 @@ const Navbar = () => {
               Iniciar sesión
             </a>
             <a href="https://app.venetel.com" className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground">
-              Comenzar gratis
+              Empezar Ahora
             </a>
           </div>
         </div>
