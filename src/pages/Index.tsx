@@ -4,6 +4,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import heroDashboard from "@/assets/dashboard-hero.png";
+import emailjs from "@emailjs/browser";
 
 const features = [
   { icon: Calendar, title: "Reservas y Calendario", desc: "Visualiza y gestiona todas tus reservas sin cruces ni confusiones." },
@@ -38,15 +39,30 @@ const metrics = [
 
 const Index = () => {
   const [showModal, setShowModal] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({ nombre: "", email: "", mensaje: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent("Solicitud de demo — VENETEL");
-    const body = encodeURIComponent(`Nombre: ${formData.nombre}\nEmail: ${formData.email}\n\n${formData.mensaje}`);
-    window.location.href = `mailto:venetelsaas@gmail.com?subject=${subject}&body=${body}`;
-    setShowModal(false);
-    setFormData({ nombre: "", email: "", mensaje: "" });
+    setIsSubmitting(true);
+    try {
+      await emailjs.send(
+        "service_4me6vt4",
+        "template_vcwip3p",
+        {
+          nombre: formData.nombre,
+          email: formData.email,
+          mensaje: formData.mensaje,
+        },
+        "bSgVsR5cnMhbudkJ6"
+      );
+      setShowModal(false);
+      setFormData({ nombre: "", email: "", mensaje: "" });
+    } catch (error) {
+      console.error("Error enviando email:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -446,9 +462,9 @@ const Index = () => {
                 value={formData.mensaje}
                 onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
                 className="w-full rounded-xl border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all resize-none" />
-              <button type="submit"
-                className="w-full rounded-xl bg-accent px-4 py-3.5 text-sm font-bold text-accent-foreground hover:brightness-110 transition shadow-md shadow-accent/20">
-                Enviar solicitud
+              <button type="submit" disabled={isSubmitting}
+                className="w-full rounded-xl bg-accent px-4 py-3.5 text-sm font-bold text-accent-foreground hover:brightness-110 transition shadow-md shadow-accent/20 disabled:opacity-60">
+                {isSubmitting ? "Enviando..." : "Enviar solicitud"}
               </button>
             </form>
           </div>
