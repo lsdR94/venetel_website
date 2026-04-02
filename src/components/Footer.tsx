@@ -10,7 +10,7 @@ const Footer = () => (
 
         {/* Col 1 — Logo + descripción */}
         <div>
-          <img src={venetelLogo} alt="VENETEL" className="object-contain" style={{ width: 120, height: 120 }} />
+          <img src={venetelLogo} alt="VENATEL" className="object-contain" style={{ width: 120, height: 120 }} />
           <p className="mt-4 text-lg font-bold leading-tight" style={{ color: 'rgba(255,255,255,0.9)' }}>
             Opera tu hotel con{' '}
             <span style={{ color: '#f9a410' }}>precisión profesional.</span>
@@ -43,10 +43,10 @@ const Footer = () => (
           <p className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: '#f9a410' }}>Contacto</p>
           <ul className="space-y-3">
             <li>
-              <a href="mailto:venetelsaas@gmail.com" className="flex items-center gap-2 text-sm transition-opacity hover:opacity-100"
+              <a href="mailto:soporte@venatel.com.ve" className="flex items-center gap-2 text-sm transition-opacity hover:opacity-100"
                 style={{ color: 'rgba(255,255,255,0.5)' }}>
                 <img src="https://img.icons8.com/color/48/gmail-new.png" alt="Gmail" />
-                venetelsaas@gmail.com
+                soporte@venatel.com.ve
               </a>
             </li>
             <li>
@@ -67,14 +67,14 @@ const Footer = () => (
               <a href="#" className="flex items-center gap-3 transition-opacity hover:opacity-100"
                 style={{ color: 'rgba(255,255,255,0.5)' }}>
                 <img src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="Instagram" />
-                @venetel.app
+                @venatel.app
               </a>
             </li>
             <li>
               <a href="#" className="flex items-center gap-3 transition-opacity hover:opacity-100"
                 style={{ color: 'rgba(255,255,255,0.5)' }}>
                 <img src="https://img.icons8.com/color/48/tiktok--v1.png" alt="TikTok" />
-                @venetel.app
+                @venatel.app
               </a>
             </li>
           </ul>
@@ -86,7 +86,7 @@ const Footer = () => (
     {/* Bottom bar */}
     <div className="border-t" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
       <div className="container mx-auto px-4 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-        <p className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>© 2026 VENETEL. Todos los derechos reservados.</p>
+        <p className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>© 2026 VENATEL. Todos los derechos reservados.</p>
         <Link to="/legal" className="text-xs hover:opacity-80 transition-opacity" style={{ color: 'rgba(255,255,255,0.3)' }}>
           Términos y Política de Privacidad
         </Link>

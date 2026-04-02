@@ -87,7 +87,7 @@ const Funcionalidades = () => {
         <div className="container mx-auto px-4 lg:px-8 text-center relative z-10">
           <ScrollReveal>
             <span className="text-accent text-sm font-bold uppercase tracking-widest">Funcionalidades</span>
-            <h1 className="mt-4 text-4xl md:text-5xl font-extrabold text-primary-foreground">Todo lo que VENETEL hace<br className="hidden md:block" /> por tu hotel</h1>
+            <h1 className="mt-4 text-4xl md:text-5xl font-extrabold text-primary-foreground">Todo lo que VENATEL hace<br className="hidden md:block" /> por tu hotel</h1>
             <p className="mt-4 text-lg text-primary-foreground/70 max-w-2xl mx-auto">Cada módulo diseñado para simplificar tu operación diaria.</p>
           </ScrollReveal>
         </div>

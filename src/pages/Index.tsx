@@ -20,13 +20,13 @@ const plans = [
     name: "Estándar", price: "$25", period: "/mes", badge: null,
     subtitle: "1 propiedad · Hasta 20 habitaciones",
     items: ["Todos los módulos incluidos", "Historial de reportes 3 meses", "1 propiedad", "Hasta 20 habitaciones", "Soporte por email en 48h"],
-    cta: "Comenzar gratis", ctaLink: "https://app.venetel.com",
+    cta: "Comenzar gratis", ctaLink: "https://app.venatel.com.ve",
   },
   {
     name: "Pro", price: "$60", period: "/mes", badge: "Recomendado",
     subtitle: "Propiedades y habitaciones ilimitadas",
     items: ["Todo lo de Estándar", "Propiedades ilimitadas", "Habitaciones ilimitadas", "Historial de reportes ilimitado", "Exportación de datos en CSV", "Programa de referidos con descuentos", "Soporte prioritario en 24h"],
-    cta: "Comenzar gratis", ctaLink: "https://app.venetel.com",
+    cta: "Comenzar gratis", ctaLink: "https://app.venatel.com.ve",
   },
 ];
 
@@ -97,7 +97,7 @@ const Index = () => {
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.38 }}
                 className="mt-8 flex flex-col sm:flex-row gap-3">
-                <a href="https://app.venetel.com" className="group inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-bold text-accent-foreground hover:brightness-110 transition-all shadow-lg shadow-accent/20">
+                <a href="https://app.venatel.com.ve" className="group inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-bold text-accent-foreground hover:brightness-110 transition-all shadow-lg shadow-accent/20">
                   Comenzar prueba gratuita
                   <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
                 </a>
@@ -133,13 +133,13 @@ const Index = () => {
                     <span className="w-3 h-3 rounded-full" style={{ background: '#febc2e' }} />
                     <span className="w-3 h-3 rounded-full" style={{ background: '#28c840' }} />
                     <div className="flex-1 mx-4 h-5 rounded-md flex items-center px-3" style={{ background: 'rgba(255,255,255,0.07)' }}>
-                      <span className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>app.venetel.com/dashboard</span>
+                      <span className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>app.venatel.com.ve/dashboard</span>
                     </div>
                   </div>
                   {/* Screenshot */}
                   <img
                     src={heroDashboard}
-                    alt="Dashboard VENETEL — gestión hotelera"
+                    alt="Dashboard VENATEL — gestión hotelera"
                     className="w-full block"
                   />
                 </div>
@@ -158,7 +158,7 @@ const Index = () => {
             {/* Texto izquierda */}
             <div className="lg:col-span-4 self-center">
               <ScrollReveal>
-                <span className="text-accent text-sm font-bold uppercase tracking-widest">¿Por qué VENETEL y no otras plataformas?</span>
+                <span className="text-accent text-sm font-bold uppercase tracking-widest">¿Por qué VENATEL y no otras plataformas?</span>
                 <h2 className="mt-3 text-3xl md:text-4xl font-bold text-foreground leading-tight">
                   Somos la alternativa <span style={{ color: '#FFD100' }}>VEN</span><span style={{ color: '#003893' }}>EZO</span><span style={{ color: '#CF142B' }}>LANA</span> que lo tiene todo, y sino... lo construimos.
                 </h2>
@@ -239,7 +239,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
-              { label: "Misión", icon: Target, text: "En VENETEL creemos que cada hotelero merece operar con herramientas profesionales sin pagar precios inalcanzables. Democratizar la gestión hotelera es nuestra razón de ser." },
+              { label: "Misión", icon: Target, text: "En VENATEL creemos que cada hotelero merece operar con herramientas profesionales sin pagar precios inalcanzables. Democratizar la gestión hotelera es nuestra razón de ser." },
               { label: "Visión", icon: Eye, text: "Convertirnos en la plataforma de gestión hotelera de referencia en Venezuela y llevar ese estándar a toda Latinoamérica, un hotel a la vez." },
             ].map((item, i) => (
               <ScrollReveal key={item.label} delay={i * 0.15}>
@@ -323,7 +323,7 @@ const Index = () => {
                   "Soporte por email en 48h",
                 ],
                 cta: "Empezar Ahora!",
-                ctaLink: "https://app.venetel.com",
+                ctaLink: "https://app.venatel.com.ve",
               },
               {
                 name: "Pro",
@@ -341,7 +341,7 @@ const Index = () => {
                   "Soporte prioritario en 24h",
                 ],
                 cta: "Empezar Ahora!",
-                ctaLink: "https://app.venetel.com",
+                ctaLink: "https://app.venatel.com.ve",
               },
             ].map((plan, i) => (
               <ScrollReveal key={plan.name} delay={i * 0.1}>
@@ -402,13 +402,13 @@ const Index = () => {
                 Tu hotel, bajo control<br /><span className="text-accent">desde hoy.</span>
               </h2>
               <p className="mt-5 text-muted-foreground text-lg leading-relaxed">
-                14 días para descubrir si VENETEL es para ti. Sin tarjeta de crédito, sin compromiso.
+                14 días para descubrir si VENATEL es para ti. Sin tarjeta de crédito, sin compromiso.
               </p>
             </div>
           </ScrollReveal>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://app.venetel.com"
+            <a href="https://app.venatel.com.ve"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-4 text-base font-bold text-accent-foreground hover:brightness-110 transition shadow-lg shadow-accent/20">
               Empezar ahora
               <ArrowRight size={16} />
@@ -448,7 +448,7 @@ const Index = () => {
             </button>
             <span className="text-accent text-xs font-bold uppercase tracking-widest">Solicitar demo</span>
             <h3 className="mt-2 text-2xl font-extrabold text-foreground">Hablemos de tu hotel</h3>
-            <p className="mt-1 text-sm text-muted-foreground">Te contactamos para mostrarte VENETEL en acción.</p>
+            <p className="mt-1 text-sm text-muted-foreground">Te contactamos para mostrarte VENATEL en acción.</p>
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               <div className="grid grid-cols-2 gap-3">
                 <input type="text" placeholder="Nombre" required value={formData.nombre}

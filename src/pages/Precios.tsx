@@ -17,7 +17,7 @@ const plans = [
       "Soporte por email en 48h",
     ],
     cta: "Empezar ahora",
-    ctaLink: "https://app.venetel.com",
+    ctaLink: "https://app.venatel.com.ve",
   },
   {
     name: "Pro",
@@ -35,7 +35,7 @@ const plans = [
       "Soporte prioritario en 24h",
     ],
     cta: "Empezar ahora",
-    ctaLink: "https://app.venetel.com",
+    ctaLink: "https://app.venatel.com.ve",
   },
 ];
 
@@ -46,11 +46,11 @@ const referralSteps = [
 ];
 
 const faqs = [
-  { q: "¿Necesito instalar algo?", a: "No. VENETEL es 100% web — funciona desde cualquier navegador en computadora, tablet o teléfono. Sin instalaciones, sin actualizaciones manuales." },
+  { q: "¿Necesito instalar algo?", a: "No. VENATEL es 100% web — funciona desde cualquier navegador en computadora, tablet o teléfono. Sin instalaciones, sin actualizaciones manuales." },
   { q: "¿Mis datos están seguros?", a: "Sí. Toda tu información se almacena en infraestructura de base de datos empresarial con encriptación en tránsito y en reposo. No usamos cookies de rastreo, no compartimos tu información con terceros y nunca vendemos los datos de nuestros clientes." },
   { q: "¿Puedo cancelar cuando quiera?", a: "Sí, sin penalizaciones. Al cancelar, conservas el acceso hasta el final del período ya pagado. Una vez vencido, tus datos son eliminados del sistema para proteger tu privacidad." },
-  { q: "¿Funciona si mi internet es inestable?", a: "VENETEL requiere conexión a internet para operar. Para garantizar continuidad, recomendamos tener una conexión de respaldo disponible, como datos móviles." },
-  { q: "¿Hay contrato de permanencia?", a: "No. VENETEL es mes a mes. Sin contratos, sin letra pequeña." },
+  { q: "¿Funciona si mi internet es inestable?", a: "VENATEL requiere conexión a internet para operar. Para garantizar continuidad, recomendamos tener una conexión de respaldo disponible, como datos móviles." },
+  { q: "¿Hay contrato de permanencia?", a: "No. VENATEL es mes a mes. Sin contratos, sin letra pequeña." },
   { q: "¿Cómo funciona el programa de referidos?", a: "Cada cliente activo recibe un enlace personal. Por cada hotel que se suscriba con tu enlace, acumulas 5% de descuento en tu mensualidad, hasta un máximo de 50%. El referido también recibe 5% en su primer mes. Los descuentos se mantienen mientras el referido permanezca suscrito." },
 ];
 
@@ -124,7 +124,7 @@ const Precios = () => (
         <ScrollReveal>
           <div className="text-center max-w-xl mx-auto">
             <span className="text-accent text-sm font-bold uppercase tracking-widest">Programa de referidos</span>
-            <h2 className="mt-3 text-3xl font-bold text-foreground">Recomienda VENETEL y paga menos cada mes</h2>
+            <h2 className="mt-3 text-3xl font-bold text-foreground">Recomienda VENATEL y paga menos cada mes</h2>
             <p className="mt-3 text-muted-foreground">
               Comparte tu enlace personal. Por cada hotel que se una con él, tu mensualidad baja.
             </p>
