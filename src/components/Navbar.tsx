@@ -71,10 +71,10 @@ const Navbar = () => {
             Iniciar sesión
           </a>
           <a
-            href="https://app.venetel.com"
+            href="https://wa.me/584126028385"
             className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground hover:brightness-110 transition"
           >
-            Empezar Ahora
+            Solicitar acceso
           </a>
         </div>
 
@@ -96,11 +96,11 @@ const Navbar = () => {
                 {l.label}
               </Link>
             ))}
-            <a href="https://app.venetel.com" className="inline-flex items-center justify-center rounded-lg border-2 border-primary px-4 py-2 text-sm font-semibold text-primary">
+            <a href="https://app.venatel.com.ve/login" className="inline-flex items-center justify-center rounded-lg border-2 border-primary px-4 py-2 text-sm font-semibold text-primary">
               Iniciar sesión
             </a>
-            <a href="https://app.venetel.com" className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground">
-              Empezar Ahora
+            <a href="https://wa.me/584126028385" className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground">
+              Solicitar acceso
             </a>
           </div>
         </div>

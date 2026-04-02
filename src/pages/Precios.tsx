@@ -6,36 +6,59 @@ const plans = [
   {
     name: "Estándar",
     price: "$25",
+    originalPrice: null,
     period: "/mes",
     badge: null,
-    subtitle: "1 propiedad · Hasta 20 habitaciones",
+    featured: false,
+    subtitle: "1 propiedad · Hasta 10 habitaciones",
     items: [
       "Todos los módulos incluidos",
       "Historial de reportes 3 meses",
       "1 propiedad",
-      "Hasta 20 habitaciones",
+      "Hasta 10 habitaciones",
       "Soporte por email en 48h",
     ],
-    cta: "Empezar ahora",
-    ctaLink: "https://app.venatel.com.ve",
+    cta: "Solicitar acceso",
+    ctaLink: "https://wa.me/584126028385",
   },
   {
     name: "Pro",
     price: "$60",
+    originalPrice: null,
     period: "/mes",
     badge: "Recomendado",
+    featured: true,
     subtitle: "Propiedades y habitaciones ilimitadas",
     items: [
       "Todo lo de Estándar",
       "Propiedades ilimitadas",
       "Habitaciones ilimitadas",
+      "1 importación de datos",
       "Historial de reportes ilimitado",
       "Exportación de datos en CSV",
       "Programa de referidos con descuentos",
       "Soporte prioritario en 24h",
     ],
-    cta: "Empezar ahora",
-    ctaLink: "https://app.venatel.com.ve",
+    cta: "Solicitar acceso",
+    ctaLink: "https://wa.me/584126028385",
+  },
+  {
+    name: "Pro+",
+    price: "$80",
+    originalPrice: "$100",
+    period: "/mes",
+    badge: "Nuevo",
+    featured: false,
+    subtitle: "Para hoteles con restaurante y crecimiento acelerado",
+    items: [
+      "Todo lo de Pro",
+      "Módulo de gestión de restaurante",
+      "Importaciones de datos ilimitadas",
+      "Prioridad en el roadmap de desarrollo",
+      "Soporte directo e inmediato",
+    ],
+    cta: "Solicitar acceso",
+    ctaLink: "https://wa.me/584126028385",
   },
 ];
 
@@ -68,7 +91,7 @@ const Precios = () => (
             Un plan para cada etapa<br />de tu hotel.
           </h1>
           <p className="mt-4 text-lg text-primary-foreground/60 max-w-xl mx-auto">
-            Sin costos ocultos, sin comisiones sobre tus reservas. 14 días para probarlo sin tarjeta de crédito.
+            Sin costos ocultos, sin comisiones sobre tus reservas. Comienza con una demo personalizada.
           </p>
         </ScrollReveal>
       </div>
@@ -77,21 +100,26 @@ const Precios = () => (
     {/* Plans */}
     <section className="bg-surface py-16">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {plans.map((plan, i) => (
             <ScrollReveal key={plan.name} delay={i * 0.1}>
               <div className={`rounded-2xl p-8 flex flex-col h-full relative transition-all duration-300 ${
-                plan.badge
+                plan.featured
                   ? "bg-background border-2 border-primary shadow-xl shadow-primary/10 scale-[1.02]"
                   : "bg-background border hover:shadow-lg"
               }`}>
                 {plan.badge && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 rounded-full shadow-md">
+                  <span className={`absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold px-4 py-1 rounded-full shadow-md ${
+                    plan.badge === "Nuevo" ? "bg-accent text-accent-foreground" : "bg-primary text-primary-foreground"
+                  }`}>
                     {plan.badge}
                   </span>
                 )}
                 <h3 className="text-xl font-bold text-foreground">{plan.name}</h3>
                 <div className="mt-3">
+                  {plan.originalPrice && (
+                    <span className="text-sm text-muted-foreground line-through mr-2">{plan.originalPrice}</span>
+                  )}
                   <span className="text-4xl font-extrabold text-foreground">{plan.price}</span>
                   <span className="text-muted-foreground text-sm ml-1">{plan.period}</span>
                 </div>
@@ -105,7 +133,7 @@ const Precios = () => (
                   ))}
                 </ul>
                 <a href={plan.ctaLink} className={`mt-8 inline-flex items-center justify-center rounded-lg px-4 py-3 text-sm font-semibold transition-all ${
-                  plan.badge
+                  plan.featured
                     ? "bg-accent text-accent-foreground hover:brightness-110 shadow-md"
                     : "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                 }`}>

@@ -18,15 +18,21 @@ const features = [
 const plans = [
   {
     name: "Estándar", price: "$25", period: "/mes", badge: null,
-    subtitle: "1 propiedad · Hasta 20 habitaciones",
-    items: ["Todos los módulos incluidos", "Historial de reportes 3 meses", "1 propiedad", "Hasta 20 habitaciones", "Soporte por email en 48h"],
-    cta: "Comenzar gratis", ctaLink: "https://app.venatel.com.ve",
+    subtitle: "1 propiedad · Hasta 10 habitaciones",
+    items: ["Todos los módulos incluidos", "Historial de reportes 3 meses", "1 propiedad", "Hasta 10 habitaciones", "Soporte por email en 48h"],
+    cta: "Solicitar acceso", ctaLink: "https://wa.me/584126028385",
   },
   {
     name: "Pro", price: "$60", period: "/mes", badge: "Recomendado",
     subtitle: "Propiedades y habitaciones ilimitadas",
-    items: ["Todo lo de Estándar", "Propiedades ilimitadas", "Habitaciones ilimitadas", "Historial de reportes ilimitado", "Exportación de datos en CSV", "Programa de referidos con descuentos", "Soporte prioritario en 24h"],
-    cta: "Comenzar gratis", ctaLink: "https://app.venatel.com.ve",
+    items: ["Todo lo de Estándar", "Propiedades ilimitadas", "Habitaciones ilimitadas", "1 importación de datos", "Historial de reportes ilimitado", "Exportación de datos en CSV", "Programa de referidos con descuentos", "Soporte prioritario en 24h"],
+    cta: "Solicitar acceso", ctaLink: "https://wa.me/584126028385",
+  },
+  {
+    name: "Pro+", price: "$80", period: "/mes", badge: "Nuevo",
+    subtitle: "Para hoteles con restaurante y crecimiento acelerado",
+    items: ["Todo lo de Pro", "Módulo de gestión de restaurante", "Importaciones de datos ilimitadas", "Prioridad en el roadmap de desarrollo", "Soporte directo e inmediato"],
+    cta: "Solicitar acceso", ctaLink: "https://wa.me/584126028385",
   },
 ];
 
@@ -34,7 +40,7 @@ const metrics = [
   { value: "99.9%", label: "Uptime garantizado" },
   { value: "<2s", label: "Tiempo de carga" },
   { value: "100%", label: "En español" },
-  { value: "$19", label: "Desde / mes" },
+  { value: "$25", label: "Desde / mes" },
 ];
 
 const Index = () => {
@@ -97,10 +103,10 @@ const Index = () => {
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.38 }}
                 className="mt-8 flex flex-col sm:flex-row gap-3">
-                <a href="https://app.venatel.com.ve" className="group inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-bold text-accent-foreground hover:brightness-110 transition-all shadow-lg shadow-accent/20">
-                  Comenzar prueba gratuita
+                <button onClick={() => setShowModal(true)} className="group inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-bold text-accent-foreground hover:brightness-110 transition-all shadow-lg shadow-accent/20">
+                  Solicitar acceso
                   <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
-                </a>
+                </button>
                 <Link to="/funcionalidades" className="inline-flex items-center justify-center rounded-lg border border-primary-foreground/25 px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
                   Explorar módulos
                 </Link>
@@ -307,56 +313,84 @@ const Index = () => {
               <p className="mt-3 text-muted-foreground text-lg">Sin costos ocultos ni comisiones sobre tus reservas</p>
             </div>
           </ScrollReveal>
-          <div className="mt-14 grid md:grid-cols-2 gap-6 lg:gap-8 max-w-3xl mx-auto">
+          <div className="mt-14 grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {[
               {
                 name: "Estándar",
                 price: "$25",
+                originalPrice: null,
                 period: "/mes",
                 badge: null,
-                subtitle: "1 propiedad · Hasta 5 habitaciones",
+                featured: false,
+                subtitle: "1 propiedad · Hasta 10 habitaciones",
                 items: [
                   "Todos los módulos incluidos",
                   "Historial de reportes 3 meses",
                   "1 propiedad",
-                  "Hasta 5 habitaciones",
+                  "Hasta 10 habitaciones",
                   "Soporte por email en 48h",
                 ],
-                cta: "Empezar Ahora!",
+                cta: "Empezar Ahora",
                 ctaLink: "https://app.venatel.com.ve",
               },
               {
                 name: "Pro",
                 price: "$60",
+                originalPrice: null,
                 period: "/mes",
                 badge: "Recomendado",
+                featured: true,
                 subtitle: "Propiedades y habitaciones ilimitadas",
                 items: [
                   "Todo lo de Estándar",
                   "Propiedades ilimitadas",
                   "Habitaciones ilimitadas",
+                  "1 importación de datos",
                   "Historial de reportes ilimitado",
                   "Exportación de datos en CSV",
                   "Programa de referidos con descuentos",
                   "Soporte prioritario en 24h",
                 ],
-                cta: "Empezar Ahora!",
+                cta: "Empezar Ahora",
                 ctaLink: "https://app.venatel.com.ve",
+              },
+              {
+                name: "Pro+",
+                price: "$80",
+                originalPrice: "$100",
+                period: "/mes",
+                badge: "Nuevo",
+                featured: false,
+                subtitle: "Para hoteles con restaurante y crecimiento acelerado",
+                items: [
+                  "Todo lo de Pro",
+                  "Módulo de gestión de restaurante",
+                  "Importaciones de datos ilimitadas",
+                  "Prioridad en el roadmap de desarrollo",
+                  "Soporte directo e inmediato",
+                ],
+                cta: "Solicitar acceso",
+                ctaLink: "https://wa.me/584126028385",
               },
             ].map((plan, i) => (
               <ScrollReveal key={plan.name} delay={i * 0.1}>
                 <div className={`rounded-2xl p-8 flex flex-col h-full relative transition-all duration-300 ${
-                  plan.badge
+                  plan.featured
                     ? "bg-background border-2 border-primary shadow-xl shadow-primary/10 scale-[1.02]"
                     : "bg-background border hover:shadow-lg"
                 }`}>
                   {plan.badge && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 rounded-full shadow-md">
+                    <span className={`absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold px-4 py-1 rounded-full shadow-md ${
+                      plan.badge === "Nuevo" ? "bg-accent text-accent-foreground" : "bg-primary text-primary-foreground"
+                    }`}>
                       {plan.badge}
                     </span>
                   )}
                   <h3 className="text-xl font-bold text-foreground">{plan.name}</h3>
                   <div className="mt-3">
+                    {plan.originalPrice && (
+                      <span className="text-sm text-muted-foreground line-through mr-2">{plan.originalPrice}</span>
+                    )}
                     <span className="text-4xl font-extrabold text-foreground">{plan.price}</span>
                     <span className="text-muted-foreground text-sm ml-1">{plan.period}</span>
                   </div>
@@ -370,7 +404,7 @@ const Index = () => {
                     ))}
                   </ul>
                   <a href={plan.ctaLink} className={`mt-8 inline-flex items-center justify-center rounded-lg px-4 py-3 text-sm font-semibold transition-all ${
-                    plan.badge
+                    plan.featured
                       ? "bg-accent text-accent-foreground hover:brightness-110 shadow-md"
                       : "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                   }`}>
@@ -402,17 +436,17 @@ const Index = () => {
                 Tu hotel, bajo control<br /><span className="text-accent">desde hoy.</span>
               </h2>
               <p className="mt-5 text-muted-foreground text-lg leading-relaxed">
-                14 días para descubrir si VENATEL es para ti. Sin tarjeta de crédito, sin compromiso.
+                Comienza con una demo personalizada y descubre si VENATEL es para ti.
               </p>
             </div>
           </ScrollReveal>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://app.venatel.com.ve"
+            <button onClick={() => setShowModal(true)}
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-4 text-base font-bold text-accent-foreground hover:brightness-110 transition shadow-lg shadow-accent/20">
-              Empezar ahora
+              Solicitar acceso
               <ArrowRight size={16} />
-            </a>
+            </button>
             <button
               onClick={() => setShowModal(true)}
               className="inline-flex items-center justify-center rounded-lg border-2 border-primary px-8 py-4 text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition">
