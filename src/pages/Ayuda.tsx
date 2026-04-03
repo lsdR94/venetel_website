@@ -1,6 +1,7 @@
 import { Construction } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import RippleButton from "@/components/ui/RippleButton";
 
 const Ayuda = () => (
   <>
@@ -25,12 +26,12 @@ const Ayuda = () => (
               Estamos preparando guías detalladas para cada módulo de VENATEL. Mientras tanto, nuestro equipo está disponible para resolver cualquier duda.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-              <a href="#" className="inline-flex items-center justify-center rounded-lg border-2 border-primary px-5 py-2.5 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
+              <RippleButton href="https://instagram.com/venatel.app" variant="outline" className="rounded-lg border-2 border-primary px-5 py-2.5 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground">
                 Escribirnos por Instagram
-              </a>
-              <Link to="/#contacto" className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground hover:brightness-110 transition">
+              </RippleButton>
+              <RippleButton href="https://wa.me/584126028385" variant="primary" className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground">
                 Contactar soporte
-              </Link>
+              </RippleButton>
             </div>
           </div>
         </ScrollReveal>

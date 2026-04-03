@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Calendar, BedDouble, Users, ConciergeBell, Package, Wallet, CheckCircle2, XCircle, Instagram, CreditCard, Target, Eye, BarChart2, LayoutDashboard, TrendingUp, ArrowRight, Shield, Zap, Globe, Star } from "lucide-react";
+import RippleButton from "@/components/ui/RippleButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -103,13 +104,13 @@ const Index = () => {
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.38 }}
                 className="mt-8 flex flex-col sm:flex-row gap-3">
-                <button onClick={() => setShowModal(true)} className="group inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-bold text-accent-foreground hover:brightness-110 transition-all shadow-lg shadow-accent/20">
+                <RippleButton onClick={() => setShowModal(true)} className="group gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-bold text-accent-foreground">
                   Solicitar acceso
                   <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
-                </button>
-                <Link to="/funcionalidades" className="inline-flex items-center justify-center rounded-lg border border-primary-foreground/25 px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
+                </RippleButton>
+                <RippleButton to="/funcionalidades" variant="outline" className="rounded-lg border border-primary-foreground/25 px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10">
                   Explorar módulos
-                </Link>
+                </RippleButton>
               </motion.div>
 
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.55 }} className="mt-10 flex flex-wrap gap-6">
@@ -130,7 +131,7 @@ const Index = () => {
               <div className="relative">
                 {/* Glow */}
                 <div className="absolute -inset-4 bg-accent/5 rounded-3xl blur-2xl" />
-                
+
                 {/* Browser frame */}
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/50" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
                   {/* Browser bar */}
@@ -157,7 +158,7 @@ const Index = () => {
 
     {/* ═══════════════════ POR QUÉ VENETEL ═══════════════════ */}
       <section className="bg-surface py-24 relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
 
@@ -211,7 +212,7 @@ const Index = () => {
                       color: "hsl(var(--primary))",
                     },
                   ].map((item, i) => (
-                    <ScrollReveal key={item.title} delay={i * 0.08}>
+                    <ScrollReveal key={item.title} delay={i * 0.05}>
                       <div className="group relative flex items-start gap-6 py-6">
                         <div className="relative z-10 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
                           style={{ background: `${item.color}15` }}>
@@ -234,7 +235,7 @@ const Index = () => {
 
       {/* ═══════════════════ SOBRE NOSOTROS ═══════════════════ */}
       <section className="relative py-24 overflow-hidden bg-surface">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
         <div className="container mx-auto px-4 lg:px-8">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
@@ -268,7 +269,7 @@ const Index = () => {
 
       {/* ═══════════════════ FUNCIONALIDADES ═══════════════════ */}
       <section className="bg-surface py-24 relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
         <div className="container mx-auto px-4 lg:px-8">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto">
@@ -279,8 +280,9 @@ const Index = () => {
           </ScrollReveal>
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f, i) => (
-              <ScrollReveal key={f.title} delay={i * 0.08}>
-                <div className="group rounded-2xl bg-background border p-7 hover:shadow-xl hover:shadow-primary/5 hover:border-primary/30 transition-all duration-500 h-full">
+              <ScrollReveal key={f.title} delay={i * 0.05}>
+                <div className="group rounded-2xl bg-background border p-7 hover:shadow-xl hover:shadow-primary/15 hover:border-primary/40 transition-all duration-500 h-full relative overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                       <f.icon size={20} className="text-primary" />
@@ -304,7 +306,7 @@ const Index = () => {
 
       {/* ═══════════════════ PRICING ═══════════════════ */}
       <section className="bg-surface py-24 relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
         <div className="container mx-auto px-4 lg:px-8">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto">
@@ -330,8 +332,8 @@ const Index = () => {
                   "Hasta 10 habitaciones",
                   "Soporte por email en 48h",
                 ],
-                cta: "Empezar Ahora",
-                ctaLink: "https://app.venatel.com.ve",
+                cta: "Solicitar Demo",
+                ctaLink: "https://wa.me/584126028385",
               },
               {
                 name: "Pro",
@@ -351,8 +353,8 @@ const Index = () => {
                   "Programa de referidos con descuentos",
                   "Soporte prioritario en 24h",
                 ],
-                cta: "Empezar Ahora",
-                ctaLink: "https://app.venatel.com.ve",
+                cta: "Solicitar Demo",
+                ctaLink: "https://wa.me/584126028385",
               },
               {
                 name: "Pro+",
@@ -369,7 +371,7 @@ const Index = () => {
                   "Prioridad en el roadmap de desarrollo",
                   "Soporte directo e inmediato",
                 ],
-                cta: "Solicitar acceso",
+                cta: "Solicitar Demo",
                 ctaLink: "https://wa.me/584126028385",
               },
             ].map((plan, i) => (
@@ -403,13 +405,17 @@ const Index = () => {
                       </li>
                     ))}
                   </ul>
-                  <a href={plan.ctaLink} className={`mt-8 inline-flex items-center justify-center rounded-lg px-4 py-3 text-sm font-semibold transition-all ${
-                    plan.featured
-                      ? "bg-accent text-accent-foreground hover:brightness-110 shadow-md"
-                      : "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                  }`}>
+                  <RippleButton
+                    href={plan.ctaLink}
+                    variant={plan.featured ? "primary" : "outline"}
+                    className={`mt-8 rounded-lg px-4 py-3 text-sm font-semibold ${
+                      plan.featured
+                        ? "bg-accent text-accent-foreground"
+                        : "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    }`}
+                  >
                     {plan.cta}
-                  </a>
+                  </RippleButton>
                 </div>
               </ScrollReveal>
             ))}
@@ -426,7 +432,7 @@ const Index = () => {
 
       {/* ═══════════════════ CTA FINAL ═══════════════════ */}
       <section className="bg-background py-24 relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
           <ScrollReveal>
@@ -442,16 +448,11 @@ const Index = () => {
           </ScrollReveal>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={() => setShowModal(true)}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-4 text-base font-bold text-accent-foreground hover:brightness-110 transition shadow-lg shadow-accent/20">
-              Solicitar acceso
+            <RippleButton onClick={() => setShowModal(true)}
+              className="gap-2 rounded-lg bg-accent px-8 py-4 text-base font-bold text-accent-foreground">
+              Solicitar Demo
               <ArrowRight size={16} />
-            </button>
-            <button
-              onClick={() => setShowModal(true)}
-              className="inline-flex items-center justify-center rounded-lg border-2 border-primary px-8 py-4 text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition">
-              Solicitar un demo
-            </button>
+            </RippleButton>
           </div>
 
           <div className="mt-10 flex flex-wrap justify-center gap-6">
@@ -496,10 +497,10 @@ const Index = () => {
                 value={formData.mensaje}
                 onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
                 className="w-full rounded-xl border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all resize-none" />
-              <button type="submit" disabled={isSubmitting}
-                className="w-full rounded-xl bg-accent px-4 py-3.5 text-sm font-bold text-accent-foreground hover:brightness-110 transition shadow-md shadow-accent/20 disabled:opacity-60">
+              <RippleButton type="submit" disabled={isSubmitting}
+                className="w-full rounded-xl bg-accent px-4 py-3.5 text-sm font-bold text-accent-foreground disabled:opacity-60">
                 {isSubmitting ? "Enviando..." : "Enviar solicitud"}
-              </button>
+              </RippleButton>
             </form>
           </div>
         </div>

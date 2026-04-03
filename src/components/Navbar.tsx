@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import venetelLogo from "@/assets/venetel-logo.png";
+import RippleButton from "@/components/ui/RippleButton";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -60,22 +61,24 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <a
+          <RippleButton
             href="https://app.venatel.com.ve/login"
-            className={`inline-flex items-center justify-center rounded-lg border-2 px-4 py-2 text-sm font-semibold transition-colors ${
+            variant="outline"
+            className={`rounded-lg border-2 px-4 py-2 text-sm font-semibold ${
               scrolled
                 ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                 : "border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10"
             }`}
           >
             Iniciar sesión
-          </a>
-          <a
+          </RippleButton>
+          <RippleButton
             href="https://wa.me/584126028385"
-            className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground hover:brightness-110 transition"
+            variant="primary"
+            className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground"
           >
             Solicitar acceso
-          </a>
+          </RippleButton>
         </div>
 
         {/* Mobile toggle */}
@@ -96,12 +99,12 @@ const Navbar = () => {
                 {l.label}
               </Link>
             ))}
-            <a href="https://app.venatel.com.ve/login" className="inline-flex items-center justify-center rounded-lg border-2 border-primary px-4 py-2 text-sm font-semibold text-primary">
+            <RippleButton href="https://app.venatel.com.ve/login" variant="outline" className="rounded-lg border-2 border-primary px-4 py-2 text-sm font-semibold text-primary">
               Iniciar sesión
-            </a>
-            <a href="https://wa.me/584126028385" className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground">
+            </RippleButton>
+            <RippleButton href="https://wa.me/584126028385" variant="primary" className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground">
               Solicitar acceso
-            </a>
+            </RippleButton>
           </div>
         </div>
       )}

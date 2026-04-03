@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import RippleButton from "@/components/ui/RippleButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -132,13 +133,17 @@ const Precios = () => (
                     </li>
                   ))}
                 </ul>
-                <a href={plan.ctaLink} className={`mt-8 inline-flex items-center justify-center rounded-lg px-4 py-3 text-sm font-semibold transition-all ${
-                  plan.featured
-                    ? "bg-accent text-accent-foreground hover:brightness-110 shadow-md"
-                    : "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                }`}>
+                <RippleButton
+                  href={plan.ctaLink}
+                  variant={plan.featured ? "primary" : "outline"}
+                  className={`mt-8 rounded-lg px-4 py-3 text-sm font-semibold ${
+                    plan.featured
+                      ? "bg-accent text-accent-foreground"
+                      : "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  }`}
+                >
                   {plan.cta}
-                </a>
+                </RippleButton>
               </div>
             </ScrollReveal>
           ))}
