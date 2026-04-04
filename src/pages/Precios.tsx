@@ -70,12 +70,38 @@ const referralSteps = [
 ];
 
 const faqs = [
-  { q: "¿Necesito instalar algo?", a: "No. VENATEL es 100% web — funciona desde cualquier navegador en computadora, tablet o teléfono. Sin instalaciones, sin actualizaciones manuales." },
-  { q: "¿Mis datos están seguros?", a: "Sí. Toda tu información se almacena en infraestructura de base de datos empresarial con encriptación en tránsito y en reposo. No usamos cookies de rastreo, no compartimos tu información con terceros y nunca vendemos los datos de nuestros clientes." },
-  { q: "¿Puedo cancelar cuando quiera?", a: "Sí, sin penalizaciones. Al cancelar, conservas el acceso hasta el final del período ya pagado. Una vez vencido, tus datos son eliminados del sistema para proteger tu privacidad." },
-  { q: "¿Funciona si mi internet es inestable?", a: "VENATEL requiere conexión a internet para operar. Para garantizar continuidad, recomendamos tener una conexión de respaldo disponible, como datos móviles." },
-  { q: "¿Hay contrato de permanencia?", a: "No. VENATEL es mes a mes. Sin contratos, sin letra pequeña." },
-  { q: "¿Cómo funciona el programa de referidos?", a: "Cada cliente activo recibe un enlace personal. Por cada hotel que se suscriba con tu enlace, acumulas 5% de descuento en tu mensualidad, hasta un máximo de 50%. El referido también recibe 5% en su primer mes. Los descuentos se mantienen mientras el referido permanezca suscrito." },
+  {
+    q: "¿Necesito instalar algo?",
+    a: "VENATEL es una plataforma 100% web. Funciona desde cualquier navegador en computadora, tablet o teléfono, sin necesidad de instalaciones ni actualizaciones manuales.",
+  },
+  {
+    q: "¿Mis datos están seguros?",
+    a: "Toda la información se almacena en infraestructura de base de datos empresarial con encriptación en tránsito y en reposo. No utilizamos cookies de rastreo, no compartimos la información de nuestros clientes con terceros y nunca la comercializamos.",
+  },
+  {
+    q: "¿Qué sucede si cancelo o dejo de renovar mi suscripción?",
+    a: "La suscripción puede cancelarse en cualquier momento sin penalizaciones. Al cancelar, se conserva el acceso hasta el final del período ya pagado, tras el cual la información será desincorporada de nuestros sistemas en un plazo de 7 días. En caso de no renovar el pago, se enviará un aviso de cobro en la fecha de corte. Si el pago no se procesa dentro de los 7 días posteriores a esa fecha, se procederá a la desincorporación definitiva de la información.",
+  },
+  {
+    q: "¿Cómo obtengo acceso a VENATEL?",
+    a: "El acceso se gestiona a través de un proceso de onboarding personalizado. Una vez solicitada la demo, un miembro de nuestro equipo coordina una sesión introductoria en la que se presentan todos los módulos de la plataforma. La creación de la cuenta se realiza de forma paralela a esta sesión, de modo que al finalizar el onboarding el cliente ya cuenta con acceso completo a su entorno.",
+  },
+  {
+    q: "¿Puedo importar mis datos desde otra plataforma?",
+    a: "Sí. Contamos con herramientas para la importación de reservas provenientes de otras plataformas, siempre que se suministre un archivo en formato .xlsx. El plan Pro incluye una importación de datos y el plan Pro+ ofrece importaciones ilimitadas. En los casos en que no dispongamos de una herramienta compatible con el formato específico del cliente, la desarrollamos.",
+  },
+  {
+    q: "¿Funciona si mi internet es inestable?",
+    a: "VENATEL requiere conexión a internet para operar. Para garantizar la continuidad del servicio, recomendamos contar con una conexión de respaldo disponible, como datos móviles.",
+  },
+  {
+    q: "¿Hay contrato de permanencia?",
+    a: "No existe contrato de permanencia. VENATEL opera bajo un modelo de suscripción mensual sin compromisos a largo plazo.",
+  },
+  {
+    q: "¿Cómo funciona el programa de referidos?",
+    a: "Cada cliente activo cuenta con un enlace de referido personal. Por cada establecimiento que se suscriba a través de ese enlace, se acumula un 5% de descuento sobre la mensualidad, con un tope máximo del 50%. El referido también recibe un 5% de descuento durante su primer mes. Los beneficios se mantienen activos mientras el referido permanezca suscrito.",
+  },
 ];
 
 const Precios = () => (
