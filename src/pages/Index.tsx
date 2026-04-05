@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Calendar, BedDouble, Users, ConciergeBell, Package, Wallet, CheckCircle2, XCircle, Instagram, CreditCard, Target, Eye, BarChart2, LayoutDashboard, TrendingUp, ArrowRight, Shield, Zap, Globe, Star } from "lucide-react";
+import { Calendar, BedDouble, Users, ConciergeBell, Package, Wallet, CheckCircle2, XCircle, Instagram, CreditCard, Target, Eye, BarChart2, LayoutDashboard, TrendingUp, ArrowRight, Shield, Zap, Globe, Star, MessageSquare, Lock } from "lucide-react";
 import RippleButton from "@/components/ui/RippleButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useState } from "react";
@@ -212,7 +212,7 @@ const Index = () => {
                       color: "hsl(var(--primary))",
                     },
                   ].map((item, i) => (
-                    <ScrollReveal key={item.title} delay={i * 0.05}>
+                    <ScrollReveal key={item.title} delay={0}>
                       <div className="group relative flex items-start gap-6 py-6">
                         <div className="relative z-10 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
                           style={{ background: `${item.color}15` }}>
@@ -280,7 +280,7 @@ const Index = () => {
           </ScrollReveal>
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f, i) => (
-              <ScrollReveal key={f.title} delay={i * 0.05}>
+              <ScrollReveal key={f.title} delay={0}>
                 <div className="group rounded-2xl bg-background border p-7 hover:shadow-xl hover:shadow-primary/15 hover:border-primary/40 transition-all duration-500 h-full relative overflow-hidden">
                   <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="flex items-center gap-3 mb-4">
@@ -457,9 +457,9 @@ const Index = () => {
 
           <div className="mt-10 flex flex-wrap justify-center gap-6">
             {[
-              { icon: Shield, text: "Datos privados y seguros" },
-              { icon: Zap, text: "Sin instalación" },
-              { icon: Globe, text: "Soporte en español" },
+              { icon: Shield, text: "Sin contrato de permanencia" },
+              { icon: CreditCard, text: "Sin tarjeta de crédito" },
+              { icon: Zap, text: "Cancela cuando quieras" },
             ].map((item) => (
               <div key={item.text} className="flex items-center gap-2 text-muted-foreground text-xs font-medium">
                 <item.icon size={14} className="text-accent/70" />
