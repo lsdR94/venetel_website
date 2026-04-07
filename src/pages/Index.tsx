@@ -18,22 +18,39 @@ const features = [
 
 const plans = [
   {
-    name: "Estándar", price: "$25", period: "/mes", badge: null,
-    subtitle: "1 propiedad · Hasta 10 habitaciones",
-    items: ["Todos los módulos incluidos", "Historial de reportes 3 meses", "1 propiedad", "Hasta 10 habitaciones", "Soporte por email en 48h"],
-    cta: "Solicitar acceso", ctaLink: "https://wa.me/584126028385",
+    name: "Estándar", price: "$25", originalPrice: null, period: "/mes", badge: null, featured: false,
+    subtitle: "Simpleza para posadas pequeñas",
+    items: ["Módulos de reservas, huéspedes, pagos, extras e inventario",
+      "Acceso a datos de los últimos 3 meses",
+      "1 propiedad, hasta 10 habitaciones",
+      "Soporte por email en 48h"
+    ],
+    cta: "Solicitar Demo", ctaLink: "https://wa.me/584126028385",
   },
   {
-    name: "Pro", price: "$60", period: "/mes", badge: "Recomendado",
-    subtitle: "Propiedades y habitaciones ilimitadas",
-    items: ["Todo lo de Estándar", "Propiedades ilimitadas", "Habitaciones ilimitadas", "1 importación de datos", "Historial de reportes ilimitado", "Exportación de datos en CSV", "Programa de referidos con descuentos", "Soporte prioritario en 24h"],
-    cta: "Solicitar acceso", ctaLink: "https://wa.me/584126028385",
+    name: "Pro", price: "$60", originalPrice: null, period: "/mes", badge: "Recomendado", featured: true,
+    subtitle: "Centralización para grupos de hotelería",
+    items: ["Todo lo de Estándar",
+      "Propiedades ilimitadas y habitaciones ilimitadas",
+      "Historial de reportes ilimitado",
+      "Exportación de datos en CSV",
+      "Programa de referidos con descuentos (hasta 50% dto.)",
+      "1 importación de datos",
+      "Soporte prioritario en 24h",
+    ],
+    cta: "Solicitar Demo", ctaLink: "https://wa.me/584126028385",
   },
   {
-    name: "Pro+", price: "$80", period: "/mes", badge: "Nuevo",
-    subtitle: "Para hoteles con restaurante y crecimiento acelerado",
-    items: ["Todo lo de Pro", "Módulo de gestión de restaurante", "Importaciones de datos ilimitadas", "Prioridad en el roadmap de desarrollo", "Soporte directo e inmediato"],
-    cta: "Solicitar acceso", ctaLink: "https://wa.me/584126028385",
+    name: "Pro+", price: "$80", originalPrice: "$100", period: "/mes", badge: "Nuevo", featured: false,
+    subtitle: "Centralización para grupos de hotelería con restaurante incluído",
+    items: [
+      "Todo lo de Pro",
+      "Módulo de restaurante",
+      "Importaciones de datos ilimitadas",
+      "Prioridad en el roadmap de desarrollo",
+      "Soporte directo en menos de 4h",
+    ],
+    cta: "Solicitar Demo", ctaLink: "https://wa.me/584126028385",
   },
 ];
 
@@ -113,27 +130,58 @@ const Index = () => {
                 </RippleButton>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.55 }} className="mt-10 flex flex-wrap gap-6">
-                {[
-                  { icon: Shield, text: "Datos privados y encriptados" },
-                  { icon: Zap, text: "Sin instalación" },
-                  { icon: Globe, text: "100% en español" },
-                ].map((item) => (
-                  <div key={item.text} className="flex items-center gap-2 text-primary-foreground/50 text-xs font-medium">
-                    <item.icon size={14} className="text-accent/70" />
-                    {item.text}
-                  </div>
-                ))}
-              </motion.div>
             </div>
 
             <motion.div className="lg:col-span-6" initial={{ opacity: 0, x: 40, scale: 0.97 }} animate={{ opacity: 1, x: 0, scale: 1 }} transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}>
               <div className="relative">
-                {/* Glow */}
-                <div className="absolute -inset-4 bg-accent/5 rounded-3xl blur-2xl" />
+
+                {/* Ambient glow beneath the frame */}
+                <div className="absolute -bottom-4 left-[15%] right-[15%] h-16 bg-accent/20 rounded-full blur-[40px] pointer-events-none" />
+
+                {/* Floating card 1 — top right */}
+                <motion.div
+                  className="absolute -right-3 top-10 z-20 flex items-center gap-2.5 rounded-xl px-3 py-2.5"
+                  style={{ background: 'rgba(10, 20, 55, 0.85)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.10)', boxShadow: '0 4px 20px rgba(0,0,0,0.35)' }}
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'hsl(var(--accent) / 0.15)' }}>
+                    <BarChart2 size={14} className="text-accent" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold leading-tight" style={{ color: 'rgba(255,255,255,0.9)' }}>+10 métricas de gestión</p>
+                    <p className="text-[10px] leading-tight" style={{ color: 'rgba(255,255,255,0.45)' }}>Ocupación, ingresos y más</p>
+                  </div>
+                </motion.div>
+
+                {/* Floating card 2 — bottom left */}
+                <motion.div
+                  className="absolute -left-3 bottom-20 z-20 flex items-center gap-2.5 rounded-xl px-3 py-2.5"
+                  style={{ background: 'rgba(10, 20, 55, 0.85)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.10)', boxShadow: '0 4px 20px rgba(0,0,0,0.35)' }}
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+                >
+                  <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'hsl(var(--accent) / 0.15)' }}>
+                    <LayoutDashboard size={14} className="text-accent" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold leading-tight" style={{ color: 'rgba(255,255,255,0.9)' }}>Todo centralizado</p>
+                    <p className="text-[10px] leading-tight" style={{ color: 'rgba(255,255,255,0.45)' }}>Reservas · Finanzas · Inventario</p>
+                  </div>
+                </motion.div>
 
                 {/* Browser frame */}
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/50" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+                <div className="relative rounded-2xl overflow-hidden" style={{
+                  border: '1px solid rgba(255,255,255,0.10)',
+                  boxShadow: [
+                    '0 1px 2px hsl(218 100% 5% / 0.2)',
+                    '0 2px 4px hsl(218 100% 5% / 0.2)',
+                    '0 4px 8px hsl(218 100% 5% / 0.18)',
+                    '0 8px 16px hsl(218 100% 5% / 0.18)',
+                    '0 20px 40px hsl(218 100% 5% / 0.22)',
+                    '0 40px 80px hsl(218 100% 5% / 0.28)',
+                  ].join(', '),
+                }}>
                   {/* Browser bar */}
                   <div className="flex items-center gap-2 px-4 py-3" style={{ background: '#1a1a2e' }}>
                     <span className="w-3 h-3 rounded-full" style={{ background: '#ff5f57' }} />
@@ -143,13 +191,34 @@ const Index = () => {
                       <span className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>app.venatel.com.ve/dashboard</span>
                     </div>
                   </div>
-                  {/* Screenshot */}
-                  <img
-                    src={heroDashboard}
-                    alt="Dashboard VENATEL — gestión hotelera"
-                    className="w-full block"
-                  />
+                  {/* Screenshot + bottom fade */}
+                  <div className="relative">
+                    <img
+                      src={heroDashboard}
+                      alt="Dashboard VENATEL — gestión hotelera"
+                      className="w-full block"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
+                      style={{ background: 'linear-gradient(to top, hsl(220 95% 18%), transparent)' }}
+                    />
+                  </div>
                 </div>
+
+                {/* Trust badges */}
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.55 }}
+                  className="mt-4 flex flex-wrap justify-center gap-3">
+                  {[
+                    { icon: Shield, text: "Datos privados y encriptados" },
+                    { icon: Zap, text: "Sin instalación" },
+                    { icon: Globe, text: "100% en español" },
+                  ].map((item) => (
+                    <div key={item.text} className="flex items-center gap-2 text-primary-foreground/50 text-xs font-medium">
+                      <item.icon size={14} className="text-accent/70" />
+                      {item.text}
+                    </div>
+                  ))}
+                </motion.div>
+
               </div>
             </motion.div>
           </div>
@@ -316,65 +385,7 @@ const Index = () => {
             </div>
           </ScrollReveal>
           <div className="mt-14 grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                name: "Estándar",
-                price: "$25",
-                originalPrice: null,
-                period: "/mes",
-                badge: null,
-                featured: false,
-                subtitle: "1 propiedad · Hasta 10 habitaciones",
-                items: [
-                  "Todos los módulos incluidos",
-                  "Historial de reportes 3 meses",
-                  "1 propiedad",
-                  "Hasta 10 habitaciones",
-                  "Soporte por email en 48h",
-                ],
-                cta: "Solicitar Demo",
-                ctaLink: "https://wa.me/584126028385",
-              },
-              {
-                name: "Pro",
-                price: "$60",
-                originalPrice: null,
-                period: "/mes",
-                badge: "Recomendado",
-                featured: true,
-                subtitle: "Propiedades y habitaciones ilimitadas",
-                items: [
-                  "Todo lo de Estándar",
-                  "Propiedades ilimitadas",
-                  "Habitaciones ilimitadas",
-                  "1 importación de datos",
-                  "Historial de reportes ilimitado",
-                  "Exportación de datos en CSV",
-                  "Programa de referidos con descuentos",
-                  "Soporte prioritario en 24h",
-                ],
-                cta: "Solicitar Demo",
-                ctaLink: "https://wa.me/584126028385",
-              },
-              {
-                name: "Pro+",
-                price: "$80",
-                originalPrice: "$100",
-                period: "/mes",
-                badge: "Nuevo",
-                featured: false,
-                subtitle: "Para hoteles con restaurante y crecimiento acelerado",
-                items: [
-                  "Todo lo de Pro",
-                  "Módulo de gestión de restaurante",
-                  "Importaciones de datos ilimitadas",
-                  "Prioridad en el roadmap de desarrollo",
-                  "Soporte directo e inmediato",
-                ],
-                cta: "Solicitar Demo",
-                ctaLink: "https://wa.me/584126028385",
-              },
-            ].map((plan, i) => (
+            {plans.map((plan, i) => (
               <ScrollReveal key={plan.name} delay={i * 0.1}>
                 <div className={`rounded-2xl p-8 flex flex-col h-full relative transition-all duration-300 ${
                   plan.featured
