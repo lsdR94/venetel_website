@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Mail, MapPin } from "lucide-react";
-import venetelLogo from "@/assets/venetel-logo.png";
+import venatelLogo from "@/assets/venatel-logo.png";
 
 const Footer = () => (
   <footer style={{ background: '#001d53' }}>
@@ -10,7 +10,7 @@ const Footer = () => (
 
         {/* Col 1 — Logo + descripción */}
         <div>
-          <img src={venetelLogo} alt="VENATEL" className="object-contain" style={{ width: 120, height: 120 }} />
+          <img src={venatelLogo} alt="VENATEL" className="object-contain" style={{ width: 120, height: 120 }} />
           <p className="mt-4 text-lg font-bold leading-tight" style={{ color: 'rgba(255,255,255,0.9)' }}>
             Opera tu hotel con{' '}
             <span style={{ color: '#f9a410' }}>precisión profesional.</span>

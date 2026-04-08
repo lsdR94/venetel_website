@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import venetelLogo from "@/assets/venetel-logo.png";
+import venatelLogo from "@/assets/venatel-logo.png";
 import RippleButton from "@/components/ui/RippleButton";
 
 const Navbar = () => {
@@ -40,7 +40,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-24 px-4 lg:px-8">
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img src={venetelLogo} alt="VENATEL" className="object-contain" style={{ width: 70, height: 70 }} />
+          <img src={venatelLogo} alt="VENATEL" className="object-contain" style={{ width: 80, height: 80 }} />
         </Link>
 
         {/* Desktop nav */}
