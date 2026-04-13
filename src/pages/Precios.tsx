@@ -33,7 +33,6 @@ const plans = [
       "Todo lo de Estándar",
       "Propiedades ilimitadas y habitaciones ilimitadas",
       "Historial de reportes ilimitado",
-      "Exportación de datos en CSV",
       "Programa de referidos con descuentos (hasta 50% dto.)",
       "1 importación de datos",
       "Soporte prioritario en 24h",
@@ -43,7 +42,7 @@ const plans = [
   },
   {
     name: "Pro+",
-    price: "$80",
+    price: "$60",
     originalPrice: "$100",
     period: "/mes",
     badge: "Nuevo",
@@ -52,7 +51,7 @@ const plans = [
     items: [
       "Todo lo de Pro",
       "Módulo de restaurante",
-      "Importaciones de datos ilimitadas",
+      "Importación y exportación de datos ilimitadas",
       "Prioridad en el roadmap de desarrollo",
       "Soporte directo en menos de 4h",
     ],
