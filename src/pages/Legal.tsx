@@ -40,7 +40,7 @@ const tosItems = [
   },
   {
     title: "10. Limitación de responsabilidad",
-    content: "VENATEL no será responsable por daños indirectos, incidentales, especiales o consecuentes que surjan del uso o la imposibilidad de uso del servicio, incluyendo pérdidas de datos atribuibles a fallas de conectividad del cliente. Nuestra responsabilidad total no excederá el monto pagado por el usuario en los últimos 12 meses. El servicio se proporciona \"tal cual\" y \"según disponibilidad\"; aunque nos esforzamos por garantizar la continuidad, no garantizamos disponibilidad ininterrumpida.",
+    content: "VENATEL no será responsable por daños indirectos, incidentales, especiales o consecuentes que surjan del uso o la imposibilidad de uso del servicio. VENATEL no asume responsabilidad por pérdidas operativas derivadas de interrupciones del servicio, incluyendo aquellas ocasionadas por terceros, fallas de conectividad o causas de fuerza mayor. El servicio se proporciona \"tal cual\" y \"según disponibilidad\"; aunque nos esforzamos por garantizar la continuidad, no garantizamos disponibilidad ininterrumpida.",
   },
   {
     title: "11. Modificaciones al servicio",
