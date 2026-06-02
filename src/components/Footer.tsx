@@ -30,7 +30,7 @@ const Footer = () => (
             ].map((link) => (
               <li key={link.label}>
                 <Link to={link.to} className="text-sm transition-opacity hover:opacity-100"
-                  style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  style={{ color: 'rgba(255,255,255,0.7)' }}>
                   {link.label}
                 </Link>
               </li>
@@ -44,14 +44,14 @@ const Footer = () => (
           <ul className="space-y-3">
             <li>
               <a href="mailto:soporte@venatel.com.ve" className="flex items-center gap-2 text-sm transition-opacity hover:opacity-100"
-                style={{ color: 'rgba(255,255,255,0.5)' }}>
+                style={{ color: 'rgba(255,255,255,0.7)' }}>
                 <img src="https://img.icons8.com/color/48/gmail-new.png" alt="Gmail" />
                 soporte@venatel.com.ve
               </a>
             </li>
             <li>
               <a href="https://wa.me/584226028310" className="flex items-center gap-2 text-sm transition-opacity hover:opacity-100"
-                style={{ color: 'rgba(255,255,255,0.5)' }}>
+                style={{ color: 'rgba(255,255,255,0.7)' }}>
                 <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" />
                 +58 422 6028310
               </a>
@@ -65,7 +65,7 @@ const Footer = () => (
           <ul className="space-y-3">
             <li>
               <a href="https://instagram.com/venatelgestion" className="flex items-center gap-3 transition-opacity hover:opacity-100"
-                style={{ color: 'rgba(255,255,255,0.5)' }}>
+                style={{ color: 'rgba(255,255,255,0.7)' }}>
                 <img src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="Instagram" />
                 @venatelgestion
               </a>
@@ -79,8 +79,8 @@ const Footer = () => (
     {/* Bottom bar */}
     <div className="border-t" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
       <div className="container mx-auto px-4 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-        <p className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>© 2026 VENATEL. Todos los derechos reservados.</p>
-        <Link to="/legal" className="text-xs hover:opacity-80 transition-opacity" style={{ color: 'rgba(255,255,255,0.3)' }}>
+        <p className="text-xs" style={{ color: 'rgba(255,255,255,0.45)' }}>© 2026 VENATEL. Todos los derechos reservados.</p>
+        <Link to="/legal" className="text-xs hover:opacity-80 transition-opacity" style={{ color: 'rgba(255,255,255,0.45)' }}>
           Términos y Política de Privacidad
         </Link>
       </div>
