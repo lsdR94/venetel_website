@@ -18,39 +18,39 @@ const features = [
 
 const plans = [
   {
-    name: "Estándar", price: "$25", originalPrice: null, period: "/mes", badge: null, featured: false,
+    name: "Estándar", price: "$40", originalPrice: null, period: "/mes", periodBlock: false, badge: null, featured: false,
     subtitle: "Simpleza para posadas pequeñas",
     items: ["Módulos de reservas, huéspedes, pagos, extras e inventario",
       "Acceso a datos de los últimos 3 meses",
       "1 propiedad, hasta 10 habitaciones",
       "Soporte por email en 48h"
     ],
-    cta: "Solicitar Demo", ctaLink: "https://wa.me/584126028385",
+    cta: "Solicitar Demo", ctaLink: "https://wa.me/584226028310",
   },
   {
-    name: "Pro", price: "$60", originalPrice: null, period: "/mes", badge: "Recomendado", featured: true,
-    subtitle: "Centralización para grupos de hotelería",
+    name: "Pro", price: "$100", originalPrice: null, period: "/mes", periodBlock: false, badge: "Recomendado", featured: true,
+    subtitle: "Para operaciones en crecimiento",
     items: ["Todo lo de Estándar",
-      "Propiedades ilimitadas y habitaciones ilimitadas",
+      "Módulo de restaurante",
+      "1 propiedad, habitaciones ilimitadas",
       "Historial de reportes ilimitado",
-      "Exportación de datos en CSV",
       "Programa de referidos con descuentos (hasta 50% dto.)",
-      "1 importación de datos",
+      "1 migración de datos asistida",
       "Soporte prioritario en 24h",
     ],
-    cta: "Solicitar Demo", ctaLink: "https://wa.me/584126028385",
+    cta: "Solicitar Demo", ctaLink: "https://wa.me/584226028310",
   },
   {
-    name: "Pro+", price: "$80", originalPrice: "$100", period: "/mes", badge: "Nuevo", featured: false,
-    subtitle: "Centralización para grupos de hotelería con restaurante incluído",
+    name: "Multi", price: "Consultar", originalPrice: null, period: "facturado por posada activa", periodBlock: true, badge: null, featured: false,
+    subtitle: "Para operadores con múltiples propiedades",
     items: [
       "Todo lo de Pro",
-      "Módulo de restaurante",
-      "Importaciones de datos ilimitadas",
+      "Propiedades ilimitadas",
+      "Migraciones de datos asistidas sin límite",
       "Prioridad en el roadmap de desarrollo",
       "Soporte directo en menos de 4h",
     ],
-    cta: "Solicitar Demo", ctaLink: "https://wa.me/584126028385",
+    cta: "Consultar", ctaLink: "https://wa.me/584226028310",
   },
 ];
 
@@ -405,7 +405,11 @@ const Index = () => {
                       <span className="text-sm text-muted-foreground line-through mr-2">{plan.originalPrice}</span>
                     )}
                     <span className="text-4xl font-extrabold text-foreground">{plan.price}</span>
-                    <span className="text-muted-foreground text-sm ml-1">{plan.period}</span>
+                    {plan.periodBlock ? (
+                      <p className="text-muted-foreground text-xs mt-1">{plan.period}</p>
+                    ) : (
+                      <span className="text-muted-foreground text-sm ml-1">{plan.period}</span>
+                    )}
                   </div>
                   <p className="mt-2 text-sm text-muted-foreground">{plan.subtitle}</p>
                   <ul className="mt-6 space-y-3 flex-1">

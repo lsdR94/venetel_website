@@ -50,10 +50,10 @@ const Footer = () => (
               </a>
             </li>
             <li>
-              <a href="https://wa.me/584126028385" className="flex items-center gap-2 text-sm transition-opacity hover:opacity-100"
+              <a href="https://wa.me/584226028310" className="flex items-center gap-2 text-sm transition-opacity hover:opacity-100"
                 style={{ color: 'rgba(255,255,255,0.5)' }}>
                 <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" />
-                +58 412 6028385
+                +58 422 6028310
               </a>
             </li>
           </ul>
@@ -64,17 +64,10 @@ const Footer = () => (
           <p className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: '#f9a410' }}>Nuestras redes</p>
           <ul className="space-y-3">
             <li>
-              <a href="#" className="flex items-center gap-3 transition-opacity hover:opacity-100"
+              <a href="https://instagram.com/venatelgestion" className="flex items-center gap-3 transition-opacity hover:opacity-100"
                 style={{ color: 'rgba(255,255,255,0.5)' }}>
                 <img src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="Instagram" />
-                @venatel.app
-              </a>
-            </li>
-            <li>
-              <a href="#" className="flex items-center gap-3 transition-opacity hover:opacity-100"
-                style={{ color: 'rgba(255,255,255,0.5)' }}>
-                <img src="https://img.icons8.com/color/48/tiktok--v1.png" alt="TikTok" />
-                @venatel.app
+                @venatelgestion
               </a>
             </li>
           </ul>

@@ -73,7 +73,7 @@ const Navbar = () => {
             Iniciar sesión
           </RippleButton>
           <RippleButton
-            href="https://wa.me/584126028385"
+            href="https://wa.me/584226028310"
             variant="primary"
             className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground"
           >
@@ -102,7 +102,7 @@ const Navbar = () => {
             <RippleButton href="https://app.venatel.com.ve/login" variant="outline" className="rounded-lg border-2 border-primary px-4 py-2 text-sm font-semibold text-primary">
               Iniciar sesión
             </RippleButton>
-            <RippleButton href="https://wa.me/584126028385" variant="primary" className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground">
+            <RippleButton href="https://wa.me/584226028310" variant="primary" className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground">
               Solicitar acceso
             </RippleButton>
           </div>
