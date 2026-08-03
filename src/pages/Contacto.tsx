@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mail, Phone, Linkedin, Building2 } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
@@ -20,6 +20,14 @@ const content = {
 const Contacto = () => {
   const [lang, setLang] = useState<"es" | "en">("en");
   const t = content[lang];
+
+  useEffect(() => {
+    const meta = document.createElement("meta");
+    meta.name = "robots";
+    meta.content = "noindex, nofollow";
+    document.head.appendChild(meta);
+    return () => { document.head.removeChild(meta); };
+  }, []);
 
   return (
     <>
