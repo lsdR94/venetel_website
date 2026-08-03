@@ -9,6 +9,7 @@ import Funcionalidades from "./pages/Funcionalidades";
 import Precios from "./pages/Precios";
 import Ayuda from "./pages/Ayuda";
 import Legal from "./pages/Legal";
+import Contacto from "./pages/Contacto";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/precios" element={<Precios />} />
             <Route path="/ayuda" element={<Ayuda />} />
             <Route path="/legal" element={<Legal />} />
+            <Route path="/contact" element={<Contacto />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
