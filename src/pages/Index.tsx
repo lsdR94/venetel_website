@@ -225,7 +225,7 @@ const Index = () => {
         </div>
       </section>
 
-    {/* ═══════════════════ POR QUÉ VENETEL ═══════════════════ */}
+    {/* ═══════════════════ POR QUÉ VENATEL ═══════════════════ */}
       <section className="bg-surface py-24 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
         <div className="container mx-auto px-4 lg:px-8">
