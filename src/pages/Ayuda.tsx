@@ -4,7 +4,10 @@ import RippleButton from "@/components/ui/RippleButton";
 
 const Ayuda = () => (
   <>
-    <section className="gradient-cta-dark py-20 lg:py-28">
+    {/* Mismo arranque que Funcionalidades y Precios: pt-28 son 112px, por
+        encima de los 96px del navbar fixed. Con py-20 el título quedaba
+        debajo de él en móvil. */}
+    <section className="gradient-cta-dark pt-28 pb-20 lg:pt-36 lg:pb-28">
       <div className="container mx-auto px-4 lg:px-8 text-center">
         <ScrollReveal>
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground">Centro de Ayuda</h1>

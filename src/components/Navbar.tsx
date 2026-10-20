@@ -30,12 +30,23 @@ const Navbar = () => {
     { to: "/ayuda", label: "Ayuda" },
   ];
 
+  // Rutas cuya primera sección es gradient-cta-dark. Solo ahí puede el navbar
+  // ser transparente con texto blanco: en /legal el fondo es blanco y los
+  // labels blancos quedarían invisibles.
+  const RUTAS_FONDO_OSCURO = ["/", "/funcionalidades", "/precios", "/ayuda", "/contact"];
+  const sobreFondoOscuro = RUTAS_FONDO_OSCURO.includes(location.pathname);
+
+  // Transparente solo arriba y solo sobre fondo oscuro. Antes era bg-primary,
+  // un azul plano sobre el gradiente diagonal del hero: coincidían únicamente
+  // en la esquina donde arranca el gradiente y el resto se veía como banda.
+  const transparente = !scrolled && sobreFondoOscuro;
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-md"
-          : "bg-primary"
+        transparente
+          ? "bg-transparent"
+          : "bg-background/95 backdrop-blur-md shadow-md"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-24 px-4 lg:px-8">
@@ -50,9 +61,9 @@ const Navbar = () => {
               key={l.to}
               to={l.to}
               className={`text-sm font-medium transition-colors ${
-                scrolled
-                  ? "text-foreground hover:text-accent"
-                  : "text-primary-foreground/90 hover:text-primary-foreground"
+                transparente
+                  ? "text-primary-foreground/90 hover:text-primary-foreground"
+                  : "text-foreground hover:text-accent"
               }`}
             >
               {l.label}
@@ -65,9 +76,9 @@ const Navbar = () => {
             href="https://app.venatel.com.ve/login"
             variant="outline"
             className={`rounded-lg border-2 px-4 py-2 text-sm font-semibold ${
-              scrolled
-                ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                : "border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10"
+              transparente
+                ? "border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10"
+                : "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             }`}
           >
             Iniciar sesión
@@ -84,7 +95,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`md:hidden p-2 transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+          className={`md:hidden p-2 transition-colors ${transparente ? "text-primary-foreground" : "text-foreground"}`}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

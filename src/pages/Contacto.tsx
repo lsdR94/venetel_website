@@ -31,8 +31,10 @@ const Contacto = () => {
 
   return (
     <>
-      {/* Barra azul decorativa */}
-      <section className="gradient-cta-dark py-10 lg:py-14" />
+      {/* Barra azul detrás del navbar. h-24 es exactamente su alto: con las
+          48px de antes, el navbar transparente se montaba sobre el fondo
+          blanco de abajo y sus labels blancos quedaban invisibles. */}
+      <section className="gradient-cta-dark h-24" />
 
       {/* Contenido sobre fondo blanco */}
       <section className="bg-background py-20">
