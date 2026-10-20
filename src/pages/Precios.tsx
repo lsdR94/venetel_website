@@ -179,6 +179,29 @@ const Precios = () => (
             </ScrollReveal>
           ))}
         </div>
+
+        {/* El Agente es un complemento, no un plan: va aparte y no como una
+            cuarta tarjeta. Está acá porque los Términos de Servicio remiten a
+            esta página como el detalle vinculante de lo que se ofrece, y el
+            Agente aparece en su sección 8. */}
+        <ScrollReveal delay={0.3}>
+          <div className="mx-auto mt-12 max-w-2xl rounded-xl border border-border bg-card p-6 text-center">
+            <h2 className="text-lg font-semibold text-foreground">Agente de IA</h2>
+            <p className="mt-2 text-muted-foreground">
+              Complemento opcional para cualquier plan. Conecta el WhatsApp de tu posada y
+              responde las preguntas de tus huéspedes con la disponibilidad y las tarifas
+              reales de tu sistema. Se cobra aparte, según la tarifa vigente, con un tope
+              mensual que defines tú.
+            </p>
+            <RippleButton
+              href="https://wa.me/584226028310"
+              variant="outline"
+              className="mt-5 rounded-lg border-2 border-primary px-4 py-2.5 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground"
+            >
+              Consultar tarifa
+            </RippleButton>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
 
