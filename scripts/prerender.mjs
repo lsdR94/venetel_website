@@ -31,10 +31,10 @@ import { StaticRouter } from 'react-router-dom/server.js';
 const raiz = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = resolve(raiz, 'dist');
 
-// Los tres documentos, uno por cada campo que pide Meta. /legal no se
-// prerenderiza: es un 301 en public/_redirects, y generarle un HTML sería
-// publicar el mismo texto en dos direcciones.
+// Los tres documentos, uno por cada campo que pide Meta, más el índice.
+// Ninguno repite el texto de otro: /legal solo enlaza a los tres.
 const RUTAS = [
+  { ruta: '/legal', titulo: 'Documentos legales — VENATEL' },
   { ruta: '/terminos-de-uso', titulo: 'Términos de Servicio — VENATEL' },
   { ruta: '/privacidad', titulo: 'Política de Privacidad — VENATEL' },
   { ruta: '/eliminacion-datos', titulo: 'Eliminación de datos — VENATEL' },
