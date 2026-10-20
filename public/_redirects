@@ -1,0 +1,12 @@
+# Redirecciones de Cloudflare Pages.
+#
+# /legal no tiene contenido propio: los tres documentos viven en
+# /terminos-de-uso, /privacidad y /eliminacion-datos. Servirla como página
+# sería publicar el mismo texto en dos direcciones.
+#
+# Un 301 de verdad, no un <Navigate> de React, para que un crawler también lo
+# siga: una redirección hecha en el cliente es invisible sin JavaScript.
+#
+# Se conserva porque está enlazada desde el footer y puede estar compartida en
+# otros sitios.
+/legal  /terminos-de-uso  301
