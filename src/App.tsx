@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Index from "./pages/Index";
 import Funcionalidades from "./pages/Funcionalidades";
@@ -32,15 +32,12 @@ export const AppRoutes = () => (
       <Route path="/contact" element={<Contacto />} />
 
       {/* Tres documentos, tres URLs: una por cada campo que pide Meta en
-          Configuración → Básica. Ninguno repite el contenido de otro. */}
+          Configuración → Básica. Ninguno repite el contenido de otro, y
+          /legal es el índice que enlaza los tres. */}
+      <Route path="/legal" element={<Legal />} />
       <Route path="/terminos-de-uso" element={<Legal />} />
       <Route path="/privacidad" element={<Legal />} />
       <Route path="/eliminacion-datos" element={<Legal />} />
-
-      {/* /legal no tiene contenido propio. En producción la resuelve
-          public/_redirects con un 301; acá queda para que `npm run dev` se
-          comporte igual. */}
-      <Route path="/legal" element={<Navigate to="/terminos-de-uso" replace />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>
