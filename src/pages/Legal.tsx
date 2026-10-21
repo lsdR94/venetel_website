@@ -106,53 +106,76 @@ const tosItems: Seccion[] = [
     ],
   },
   {
-    title: "11. Programa de referidos",
+    title: "11. Restricciones de uso",
     cuerpo: [
-      "11.1. Cada cliente de los planes PRO o MULTI, activo y al día en sus pagos, dispone de un enlace de referido. Por cada nuevo establecimiento que contrate un plan de pago a través de ese enlace, el referidor obtiene un 5% de descuento sobre su mensualidad, acumulable hasta un máximo del 50%. El establecimiento referido obtiene un 5% de descuento en su primera mensualidad pagada.",
-      "11.2. El descuento del referidor se mantiene mientras el establecimiento referido permanezca activo y al día en sus pagos.",
-      "11.3. No generan beneficio los autorreferidos, ni los establecimientos del mismo titular o grupo económico que el referidor, ni los clientes que ya lo fueron de VENATEL.",
-      "11.4. Los descuentos no son canjeables por dinero, no son transferibles y se aplican solo sobre la mensualidad del plan.",
-      "11.5. VENATEL puede modificar o terminar el programa con un aviso de 30 días, respetando los descuentos ya generados hasta esa fecha, y puede anular beneficios obtenidos de forma fraudulenta.",
+      "El acceso al servicio no transfiere ningún derecho sobre el software ni sobre su infraestructura. El cliente y los usuarios que habilite se obligan a no:",
+      [
+        "descompilar, aplicar ingeniería inversa, desensamblar ni intentar derivar el código fuente, la estructura de la base de datos o la arquitectura de la plataforma;",
+        "copiar, reproducir, adaptar, traducir ni crear obras derivadas de cualquier parte de la plataforma, incluidas su interfaz, su diseño y su documentación;",
+        "utilizar el servicio, ni la información obtenida a través de él, para desarrollar, financiar o facilitar un producto o servicio que compita con VENATEL;",
+        "extraer datos de forma automatizada mediante scraping, bots, rastreadores o cualquier medio distinto de las funciones previstas en la plataforma;",
+        "revender, arrendar, sublicenciar, ceder ni compartir el acceso con terceros ajenos al establecimiento registrado, ni emplear una misma cuenta para establecimientos distintos de los contratados;",
+        "eliminar, alterar u ocultar avisos de propiedad, marcas, logotipos o atribuciones presentes en la plataforma o en los documentos que genera.",
+      ],
+      "El cliente reconoce que el incumplimiento de esta sección causa a VENATEL un daño de difícil reparación económica. En consecuencia, VENATEL podrá solicitar medidas cautelares o de cesación inmediata ante los tribunales competentes, además de la indemnización por los daños causados, y suspender el acceso sin previo aviso mientras la controversia se resuelve.",
     ],
   },
   {
-    title: "12. Limitación de responsabilidad",
+    title: "12. Confidencialidad",
+    cuerpo: [
+      "Cada parte se obliga a mantener en reserva la información no pública de la otra a la que acceda con motivo de esta relación.",
+      "Es información confidencial de VENATEL el código fuente, la arquitectura, los esquemas de base de datos, las condiciones comerciales particulares, los planes de desarrollo y cualquier material técnico no publicado. Es información confidencial del cliente su información operativa y los datos de sus huéspedes.",
+      "Ninguna de las partes revelará esa información a terceros ni la empleará para fines distintos de la ejecución del servicio, salvo autorización escrita de la otra parte o requerimiento legal, caso en el cual se notificará a la otra parte cuando la ley lo permita. La obligación subsiste durante tres años contados desde el fin de la relación, y de forma indefinida respecto del código fuente y de los secretos industriales de VENATEL.",
+    ],
+  },
+  {
+    title: "13. Programa de referidos",
+    cuerpo: [
+      "13.1. Cada cliente de los planes PRO o MULTI, activo y al día en sus pagos, dispone de un enlace de referido. Por cada nuevo establecimiento que contrate un plan de pago a través de ese enlace, el referidor obtiene un 5% de descuento sobre su mensualidad, acumulable hasta un máximo del 50%. El establecimiento referido obtiene un 5% de descuento en su primera mensualidad pagada.",
+      "13.2. El descuento del referidor se mantiene mientras el establecimiento referido permanezca activo y al día en sus pagos.",
+      "13.3. No generan beneficio los autorreferidos, ni los establecimientos del mismo titular o grupo económico que el referidor, ni los clientes que ya lo fueron de VENATEL.",
+      "13.4. Los descuentos no son canjeables por dinero, no son transferibles y se aplican solo sobre la mensualidad del plan.",
+      "13.5. VENATEL puede modificar o terminar el programa con un aviso de 30 días, respetando los descuentos ya generados hasta esa fecha, y puede anular beneficios obtenidos de forma fraudulenta.",
+    ],
+  },
+  {
+    title: "14. Limitación de responsabilidad",
     cuerpo: [
       `El servicio se presta "tal cual" y "según disponibilidad", sin garantía de funcionamiento ininterrumpido. VENATEL no responde por daños indirectos, incidentales, especiales o consecuentes, lucro cesante ni pérdida de reservas o ingresos. Tampoco responde por fallas atribuibles a terceros (incluidos Meta, Anthropic y los proveedores de infraestructura), fallas de conectividad, fuerza mayor, información ingresada por el hotel ni respuestas del Agente de IA. En cualquier caso, la responsabilidad total de VENATEL frente al cliente, por cualquier concepto, no excederá el monto efectivamente pagado por el cliente en los 3 meses anteriores al hecho que origine el reclamo.`,
     ],
   },
   {
-    title: "13. Indemnidad",
+    title: "15. Indemnidad",
     cuerpo: [
       "El hotel mantendrá indemne a VENATEL y a su titular frente a cualquier reclamo, sanción, daño o gasto, incluidos honorarios de abogados, derivado de: los mensajes enviados desde su número o cuenta; la falta de consentimiento de sus contactos; el incumplimiento de las políticas de Meta; el contenido que publique o procese en la plataforma; los datos de huéspedes que haya obtenido o tratado indebidamente; o el incumplimiento de estos términos.",
     ],
   },
   {
-    title: "14. Modificaciones del servicio",
+    title: "16. Modificaciones del servicio",
     cuerpo: [
       "VENATEL puede modificar, mejorar o descontinuar funcionalidades. Los cambios que afecten de forma significativa la funcionalidad principal se notificarán con al menos 15 días de anticipación. Las mejoras se incorporan de forma continua sin necesidad de aviso.",
     ],
   },
   {
-    title: "15. Cesión",
+    title: "17. Cesión",
     cuerpo: [
       "VENATEL puede ceder este contrato, junto con la cartera de clientes, a una sociedad que constituya su titular o a un tercero adquirente del negocio, notificándolo por correo electrónico. El cliente no puede ceder su posición sin consentimiento escrito de VENATEL.",
     ],
   },
   {
-    title: "16. Notificaciones",
+    title: "18. Notificaciones",
     cuerpo: [
       "Las comunicaciones se realizan válidamente al correo electrónico registrado en la cuenta, y a soporte@venatel.com.ve en el caso de comunicaciones dirigidas a VENATEL.",
     ],
   },
   {
-    title: "17. Disposiciones generales",
+    title: "19. Disposiciones generales",
     cuerpo: [
       "Si alguna cláusula resulta inválida, el resto conserva su vigencia. Estos términos, junto con la Política de Privacidad, el documento Eliminación de datos y, en su caso, el acuerdo escrito del plan MULTI, constituyen el acuerdo completo entre las partes. La falta de ejercicio de un derecho no implica su renuncia.",
     ],
   },
   {
-    title: "18. Ley aplicable y jurisdicción",
+    title: "20. Ley aplicable y jurisdicción",
     cuerpo: [
       "Estos términos se rigen por las leyes de la República Bolivariana de Venezuela. Las partes procurarán primero una solución amistosa; de no lograrse, someten cualquier controversia a los tribunales competentes de la ciudad de Caracas.",
     ],
@@ -326,7 +349,11 @@ const NAV: { to: RutaLegal; label: string; resumen: string }[] = [
   },
 ];
 
-const VERSION = "Versión 002-2026-10 · octubre 2026";
+// Sube el consecutivo con cada cambio sustantivo del texto. Tiene que ir a la
+// par de TERMS_VERSION en el repo de la app (src/config/venatel.ts): es lo que
+// se graba en profiles.terms_version al crear una cuenta, y si una cambia sin
+// la otra el registro apunta a la versión equivocada.
+const VERSION = "Versión 003-2026-10 · octubre 2026";
 const TITULAR = "VENATEL · Luis Rivera · RIF V-24895363-9";
 
 // ============================================================
