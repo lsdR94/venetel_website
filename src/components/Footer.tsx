@@ -79,7 +79,10 @@ const Footer = () => (
     {/* Bottom bar */}
     <div className="border-t" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
       <div className="container mx-auto px-4 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-        <p className="text-xs" style={{ color: 'rgba(255,255,255,0.45)' }}>© 2026 VENATEL. Todos los derechos reservados.</p>
+        {/* Razón social en el pie: es lo que mira un revisor de Meta o un
+            procesador de pagos para juzgar si el negocio es real. El RIF no va
+            acá — contiene la cédula del titular y ya está en §0 de Términos. */}
+        <p className="text-xs" style={{ color: 'rgba(255,255,255,0.45)' }}>© 2026 VENATEL — nombre comercial de LUISDANIEL ANTONIO RIVERA CURBELO · Caracas, Venezuela</p>
         <Link to="/legal" className="text-xs hover:opacity-80 transition-opacity" style={{ color: 'rgba(255,255,255,0.45)' }}>
           Términos y Política de Privacidad
         </Link>

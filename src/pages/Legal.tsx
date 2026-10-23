@@ -24,7 +24,7 @@ const tosItems: Seccion[] = [
   {
     title: "0. Titular del servicio",
     cuerpo: [
-      `VENATEL es el nombre comercial bajo el cual opera Luis Rivera, persona natural, RIF V-24895363-9, con domicilio en Caracas, Venezuela (en adelante, "VENATEL"). Contacto: ${CONTACTO}.`,
+      `VENATEL es el nombre comercial bajo el cual opera LUISDANIEL ANTONIO RIVERA CURBELO, persona natural, RIF V-24895363-9, con domicilio en Caracas, Venezuela (en adelante, "VENATEL"). Contacto: ${CONTACTO}.`,
     ],
   },
   {
@@ -184,13 +184,7 @@ const tosItems: Seccion[] = [
 
 const privacyItems: Seccion[] = [
   {
-    title: "1. Responsable",
-    cuerpo: [
-      "Luis Rivera, persona natural, RIF V-24895363-9, bajo el nombre comercial VENATEL. Contacto de privacidad: soporte@venatel.com.ve.",
-    ],
-  },
-  {
-    title: "2. Información que recopilamos",
+    title: "1. Información que recopilamos",
     cuerpo: [
       [
         "Datos de la cuenta: nombre, correo electrónico y datos del establecimiento.",
@@ -201,25 +195,25 @@ const privacyItems: Seccion[] = [
     ],
   },
   {
-    title: "3. Uso de la información",
+    title: "2. Uso de la información",
     cuerpo: [
       "Usamos la información exclusivamente para prestar el servicio, procesar pagos, enviar comunicaciones operativas y generar los reportes que el cliente solicite. No usamos datos de clientes ni de huéspedes para publicidad ni para entrenar o desarrollar el Agente de IA, que se construye con datos de prueba creados por VENATEL. Las conversaciones de un hotel solo se usan para ajustar el estilo de su propio Agente, y solo si el hotel lo solicita.",
     ],
   },
   {
-    title: "4. Almacenamiento y seguridad",
+    title: "3. Almacenamiento y seguridad",
     cuerpo: [
       "Los datos se alojan en servidores ubicados en Estados Unidos. El cifrado en tránsito (TLS) y en reposo lo provee nuestro proveedor de infraestructura. Aplicamos aislamiento de datos por cliente mediante Row Level Security y control de acceso por roles. El acceso a los datos de producción está restringido al titular y al personal autorizado.",
     ],
   },
   {
-    title: "5. Cookies",
+    title: "4. Cookies",
     cuerpo: [
       "Usamos únicamente cookies y almacenamiento técnicos, necesarios para la sesión y el funcionamiento del servicio. No usamos cookies de publicidad ni de analítica de terceros.",
     ],
   },
   {
-    title: "6. Proveedores que procesan datos",
+    title: "5. Proveedores que procesan datos",
     cuerpo: [
       [
         "Supabase (EE. UU.): base de datos, autenticación y archivos.",
@@ -232,19 +226,19 @@ const privacyItems: Seccion[] = [
     ],
   },
   {
-    title: "7. Módulo de mensajería",
+    title: "6. Módulo de mensajería",
     cuerpo: [
       "Los datos de mensajería se usan solo para mostrar las conversaciones al personal del hotel, generar las respuestas del Agente y dejar constancia del intercambio. Cada hotel accede únicamente a sus propias conversaciones. El hotel puede borrar conversaciones desde la plataforma en cualquier momento.",
     ],
   },
   {
-    title: "8. Datos de los huéspedes",
+    title: "7. Datos de los huéspedes",
     cuerpo: [
       "Respecto de los datos de sus huéspedes y contactos, el hotel es el responsable del tratamiento y VENATEL actúa como encargado, tratándolos solo por instrucción del hotel. Corresponde al hotel informar a sus huéspedes y obtener los consentimientos exigidos por la ley y por las políticas de WhatsApp e Instagram. Las solicitudes de huéspedes se gestionan según el documento Eliminación de datos.",
     ],
   },
   {
-    title: "9. Retención",
+    title: "8. Retención",
     cuerpo: [
       [
         "Los datos se conservan mientras la cuenta esté activa.",
@@ -256,19 +250,19 @@ const privacyItems: Seccion[] = [
     ],
   },
   {
-    title: "10. Derechos",
+    title: "9. Derechos",
     cuerpo: [
       "El cliente puede acceder a sus datos, corregirlos y exportarlos desde la plataforma, y solicitar su eliminación conforme al documento Eliminación de datos. Las solicitudes se atienden en un máximo de 5 días hábiles.",
     ],
   },
   {
-    title: "11. Cambios en esta política",
+    title: "10. Cambios en esta política",
     cuerpo: [
       "Los cambios relevantes se notificarán al correo registrado con al menos 15 días de anticipación.",
     ],
   },
   {
-    title: "12. Contacto",
+    title: "11. Contacto",
     cuerpo: [`${CONTACTO}. Respuesta estimada: 24 a 48 horas hábiles.`],
   },
 ];
@@ -353,8 +347,7 @@ const NAV: { to: RutaLegal; label: string; resumen: string }[] = [
 // par de TERMS_VERSION en el repo de la app (src/config/venatel.ts): es lo que
 // se graba en profiles.terms_version al crear una cuenta, y si una cambia sin
 // la otra el registro apunta a la versión equivocada.
-const VERSION = "Versión 003-2026-10 · octubre 2026";
-const TITULAR = "VENATEL · Luis Rivera · RIF V-24895363-9";
+const VERSION = "Versión 004-2026-10 · octubre 2026";
 
 // ============================================================
 // COMPONENT
@@ -374,8 +367,7 @@ const Legal = () => {
           <h1 className="text-3xl md:text-4xl font-bold text-foreground text-center">
             {doc ? doc.titulo : "Documentos legales"}
           </h1>
-          <p className="mt-2 text-center text-muted-foreground font-medium">{TITULAR}</p>
-          <p className="mt-1 text-center text-muted-foreground">{VERSION}</p>
+          <p className="mt-2 text-center text-muted-foreground">{VERSION}</p>
 
           {/* Los tres documentos, en línea y centrados. Link y no button para
               que sean hipervínculos de verdad: se pueden abrir en otra
